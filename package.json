@@ -17,5 +17,13 @@
     "lite": "lite-server"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abholos/coAid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Abholos/coAid/issues"
+  },
+  "homepage": "https://github.com/Abholos/coAid#readme"
 }
