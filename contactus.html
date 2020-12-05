@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <link href="css/styles.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -24,7 +25,7 @@
 
     <div class="collapse navbar-collapse" id="Navbar">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
+        <li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
             Home</a></li>
         <li class="nav-item"><a class="nav-link" href="./facts.html"><span class="fa fa-info fa-lg"></span>
             Facts</a></li>
@@ -43,16 +44,93 @@
       </span>
     </div>
   </nav>
-
+  <br>
+  <br>
+  <!--JUMPOTRON-->
+  <header class="jumbotron">
+    <div class="container">
+      <div class="row row-header">
+        <div class="col-12 col-sm-8">
+          <h1>CoAid</h1>
+          <p>We Aid People during Covid</p>
+        </div>
+        <div class="col col-sm">
+          <img src="#" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </header>
   <!-- CONTACTUS PAGE START - PANAGIOTIS  -->
+  <!--breadcrumb-->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Contact-FQA</li>
+    </ol>
+  </nav>
+  <!--breadcrumb-->
+  <!--Main page-->
   <div class="container">
-    <h1>Hello worlds</h1>
-    <p>change
-    </p>
-  </div>
+    <div class="row row-header">
+      <div class="col-12">
+        <h3>Contact-FAQ</h3>
+        <hr>
+      </div>
+    </div>
+
+    <div class="row row-content">
+
+    </div>
+
+    <div class="row row-content" width="50%" style="background-color: teal;">
+      <div class="col-6">
+        <iframe width="500" height="450" frameborder="1" scrolling="no" marginheight="0" marginwidth="0"
+          margin-left="" src="https://maps.google.com/maps?q=arxipelagous%2041%20petroupoli&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+      </div>
+      <div class="col-6">
+        <form class="form-horizontal" action="" method="post">
+          <fieldset>
+            <legend class="text-center">Contact us</legend>
+
+            <!-- Name input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="name">Name</label>
+              <div class="col-md-9">
+                <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+              </div>
+            </div>
+
+            <!-- Email input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="email">Your E-mail</label>
+              <div class="col-md-9">
+                <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+              </div>
+            </div>
+
+            <!-- Message body -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="message">Your message</label>
+              <div class="col-md-9">
+                <textarea class="form-control" id="message" name="message"
+                  placeholder="Please enter your message here..." rows="5"></textarea>
+              </div>
+            </div>
+
+            <!-- Form actions -->
+            <div class="form-group">
+              <div class="col-md-12 text-right">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
   <!-- CONTACTUS PAGE END - PANAGIOTIS  -->
 
-  <footer>
+  <footer class="footer">
     <div class="row justify-content-center navbar-dark bg-dark fixed-bottom" style="color:white;">
       <div class="col-auto">
         <p> &copy; Copyright 2020 co-A-id</p>
@@ -65,6 +143,8 @@
   <script src="node_modules/tether/dist/js/tether.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/scripts.js"></script>
 </body>
 
