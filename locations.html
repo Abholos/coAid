@@ -13,7 +13,7 @@
   <!-- style for maps here -->
   <style>
     html,
-    body{
+    body {
       font-family: Arial, sans-serif;
       height: 100%;
       margin: 0;
@@ -61,35 +61,66 @@
   </nav>
 
   <!-- LOCATIONS PAGE START - ARIS&MARIA -->
-  <div id="map">
+  <div id="map"></div>
+
+  <div class="container">
+    <div style="margin-top:20px; float: right;">
+      <input type="button" class="btn btn-lg btn-primary" value="ADD Shelter">
+    </div>
     
   </div>
+
   
+  
+
   <!-- MAP SCRIPT -->
   <script>
     var map;
     function initMap() {
       //Contructor creates a new map - only center and zoom required
       map = new google.maps.Map(document.getElementById("map"), {
-        center: {lat: 37.96639, lng: 23.73513},
+        center: { lat: 37.96639, lng: 23.73513 },
         zoom: 13
       });
 
+      //info window
+      var contentInfo = '<div id="content">' +
+        '<h5><span id="eventName">Event Name</span></h5>' +
+        '<p><span id="locationName">Location name</p>' +
+        '<p><span id="date">Date</span></p>' +
+        '<p><span id="contact info">Contact info</span></p>' +
+        '<input type="button" class="btn btn-primary" value="Donate">'
+        '</div>';
+
+
+      var infowindow = new google.maps.InfoWindow({
+        content: contentInfo
+      });
+
       //Test marker
-      var acropolis = {lat: 37.97157, lng: 23.72582};
+      var acropolis = { lat: 37.97157, lng: 23.72582 };
       var marker = new google.maps.Marker({
         position: acropolis,
         map: map,
         title: "Acropolis - Test Marker"
       });
+
+      //marker listener
+      marker.addListener("click", () => {
+        infowindow.open(map, marker);
+      });
+
+
     }
+
+
   </script>
 
 
   <!-- MAP EMBED -->
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyKBM2dqKGmOVKbm30ZpvNamBQbDdWAZk&callback=initMap">
-</script>
+    </script>
 
   <!-- LOCATIONS PAGE END - ARIS&MARIA -->
 
