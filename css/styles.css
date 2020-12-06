@@ -1,0 +1,57 @@
+.jumbotron { 
+    padding:70px 30px 70px 30px; 
+    margin:0px auto; 
+    background: teal; 
+    color:floralwhite; }
+
+    @import url('https://fonts.googleapis.com/css?family=Tajawal');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+section{
+	padding: 60px 0;
+}
+
+#accordion-style-1 h1,
+#accordion-style-1 a{
+    color:teal;
+}
+#accordion-style-1 .btn-link {
+    font-weight: 400;
+    color: teal;
+    background-color: transparent;
+    text-decoration: none !important;
+    font-size: 16px;
+    font-weight: bold;
+	padding-left: 25px;
+}
+
+#accordion-style-1 .card-body {
+    border-top: 2px solid teal;
+}
+
+#accordion-style-1 .card-header .btn.collapsed .fa.main{
+	display:none;
+}
+
+#accordion-style-1 .card-header .btn .fa.main{
+	background: teal;
+    padding: 13px 11px;
+    color: #ffffff;
+    width: 35px;
+    height: 41px;
+    position: absolute;
+    left: -1px;
+    top: 10px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+	display:block;
+}
+
+#accordion-style-1 cdc-2020 .accordion .card-header, html.cdc-2020 .accordion .card-header.collapsed:hover, html.cdc-2020 .accordion .card-header:hover {
+    padding: 25px 75px 25px 25px;
+}
+
+#accordion-style-1 .accordion .card-header.collapsed {
+    background: 0 0;
+    border-top: 1px solid #bdbdbd;
+}
