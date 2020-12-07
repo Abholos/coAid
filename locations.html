@@ -63,13 +63,17 @@
   <!-- LOCATIONS PAGE START - ARIS&MARIA -->
   <div id="map"></div>
 
-  <!-- BUTTON AND MODAL -->
+  <!-- ADD EVENT BUTTON -->
   <div style="margin-top:20px; float: right;">
-    <input type="button" class="btn btn-lg btn-primary" value="ADD Event" data-toggle="modal"
+    <input id="addEventID" type="button" class="btn btn-lg btn-primary" value="ADD Event" data-toggle="modal"
       data-target="#modalAddShelterForm">
   </div>
 
-  <!-- modal -->
+  <!-- Add event button listener -->
+  <script>
+  </script>
+
+  <!-- ADD EVENT MODAL -->
   <div class="modal fade" id="modalAddShelterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -112,15 +116,6 @@
           </div>
 
           <div class="form-group row">
-            <!-- <label class="col col-sm-4">Make a Donation</label>
-            <div class="btn-group col-12 col-sm-3" role="group" aria-label="resRadioGroup">
-
-              <label class="btn btn-success"><input id="radioYes" type="radio" name="aaa" value="yes"
-                  checked>Yes</label>
-
-              <label class="btn btn-danger"><input id="radioNo" type="radio" name="aaa" value="no">No</label>
-            </div> -->
-
             <fieldset id="rField" style="border:none; margin:0px; padding:0">
               <h4 class="w-100 font-weight-bold">Open a Donation Campaign</h4>
               <input type="radio" id="radioNo" name="radioX" value="No"/>
@@ -148,11 +143,87 @@
 
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <button class="btn btn-primary">ADD Event <i class="fas fa-paper-plane-o ml-1"></i></button>
+          <button id="addEventModalID" class="btn btn-primary" data-dismiss="modal">ADD Event <i class="fas fa-paper-plane-o ml-1"></i></button>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- DONATE MODAL -->
+  <!-- donate modal code goes here -->
+  <div id="donateModalID" class="modal fade mt-5" role="dialog"> 
+    <div class="modal-dialog modal-lg" role="content">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Enter Ammount in Euro &euro;</h3>
+            </div>
+            <div class="card-body bg-white">
+                <form id="resForm">
+                    <div class="form-group row">
+                        <label class="col-12 col-sm-4">Donate</label>
+                        <div class="col col-sm">
+                            <div class="form-check form-check-inline">
+                                <input  class="form-check-input" type="radio" name="inlineRadioOptions" value="option1" id="inlineRadio1">
+                                <label class="form-check-label" for="inlineRadio1">10&euro;</label>
+                            </div>    
+
+                            <div class="form-check form-check-inline">
+                                <input  class="form-check-input" type="radio" name="inlineRadioOptions" value="option2" id="inlineRadio2">
+                                <label class="form-check-label" for="inlineRadio2">20&euro;</label>
+                            </div>
+                                
+                            <div class="form-check form-check-inline">
+                                <input  class="form-check-input" type="radio" name="inlineRadioOptions" value="option3" id="inlineRadio3">
+                                <label class="form-check-label" for="inlineRadio3">30&euro;</label>
+                            </div>
+                                
+                            <div class="form-check form-check-inline">
+                                <input  class="form-check-input" type="radio" name="inlineRadioOptions" value="option4" id="inlineRadio4">
+                                <label class="form-check-label" for="inlineRadio4">40&euro;</label>
+                            </div>
+                                
+                            <div class="form-check form-check-inline">
+                                <input  class="form-check-input" type="radio" name="inlineRadioOptions" value="option5" id="inlineRadio5">
+                                <label class="form-check-label" for="inlineRadio1">50&euro;</label>
+                            </div>
+                                
+                            <div class="form-check form-check-inline">
+                                <input  class="form-check-input" type="radio" name="inlineRadioOptions" value="option6" id="inlineRadio6">
+                                <label class="form-check-label" for="inlineRadio1">100&euro;</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    
+                        <a class="badge badge-success">Your Donation is very importand</a>
+                        
+                    
+                        <label class="col col-sm">Account name</label>
+                        <div class="input-group col-12 col-sm-4">
+                            <div class="input-group-prepend">
+                                <span id="accountNameText">Name</span>
+                            </div>
+                            
+                        </div>
+                        <br><br>
+                        <label class="col col-sm">IBAN</label>
+                        <div class="input-group col-12 col-sm-4">
+                            <div class="input-group-prepend">
+                                <span id="accountIBANText">An Account IBAN</span>
+                            </div>
+                            
+                        </div>    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default btn-sm" type="cancel" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-default btn-primary" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
   <!-- MAP SCRIPT -->
@@ -165,20 +236,6 @@
         zoom: 13
       });
 
-      //info window
-      var contentInfo = '<div id="content">' +
-        '<h5><span id="eventName">Custom Event Name</span></h5>' +
-        '<p><span id="locationName">Location lat & long</p>' +
-        '<p><span id="date">Date</span></p>' +
-        '<p><span id="contact info">Contact info</span></p>' +
-        '<input type="button" class="btn btn-primary" value="Donate">'
-      '</div>';
-
-
-      var infowindow = new google.maps.InfoWindow({
-        content: contentInfo
-      });
-
       //Test marker
       var acropolis = { lat: 37.97157, lng: 23.72582 };
       var marker = new google.maps.Marker({
@@ -187,14 +244,83 @@
         title: "Acropolis - Test Marker"
       });
 
-      //marker listener
-      marker.addListener("click", () => {
-        infowindow.open(map, marker);
-      });
+      //Array of markers
+      var markers = [
+        {lat: 38.00335152618623, lng: 23.74245093801985},
+        {lat: 38.02189450633734, lng: 23.747306768389443},
+      ];
+
+      //iterate markers array
+      for(var i=0; i<markers.length; i++) {
+        addMarker(markers[i]);
+      }
+
+      //Add marker function
+      function addMarker(coords, contentInfo) {
+        var marker = new google.maps.Marker({
+          position: coords,
+          content: contentInfo,
+          map:map
+        });
+        
+        var infowindow = new google.maps.InfoWindow({
+          content: contentInfo
+        });
+
+        //marker listener
+        marker.addListener("click", () => {
+          infowindow.open(map, marker);
+        });
 
 
+        //ADD NEW MARKER Functionality
+        var addEvent = document.getElementById("addEventModalID");
+        
+        
+        console.log(infowindow);
+        addEvent.onclick = () => {
+          var latitude = document.getElementById("eventLat").value;
+          var longtitude = document.getElementById("eventLong").value;
+          //debug
+          console.log("CLICKED!" + latitude + " " + longtitude);
+
+          //adds the coords to the markers array
+          markers.push({ lat: parseFloat(latitude), lng: parseFloat(longtitude) });
+
+          var eventName = document.getElementById("eventName").value;
+          var eventDate = document.getElementById("eventDate").value;
+          var eventDescription = document.getElementById("eventDescription").value;
+          var donate = document.getElementById("radioYes");
+          var donateNo = document.getElementById("radioNo");
+
+
+          contentInfo =  `<h5> ${eventName} </h5><br>
+                          <div>${marker.getPosition()}</div><br>
+                          <div>Day: ${eventDate}<div><br>
+                          <div>Info: ${eventDescription}<div><br>
+                          <div>${donation()}</div>`
+          console.log(eventName);
+
+          var accName = document.getElementById("accountName").value;
+          var ibanNo = document.getElementById("iban").value;
+                        
+          function donation(){
+            if(donate.checked){
+              return `<input type="button" id="donateButton" class="btn btn-primary" value="Donate" data-toggle="modal" data-target="#donateModalID">`;
+            } else if (donateNo.checked) {
+              return `<p class="badge badge-danger">Donations are closed for this event</p>`;
+            }
+          }
+
+
+          console.log(markers);
+          addMarker(markers[markers.length - 1], contentInfo); //adds the new marker to the map
+
+
+        }
+      }
+      
     }
-
 
   </script>
 
