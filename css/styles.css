@@ -1,5 +1,16 @@
+
 /* PANOS START */
 @import url('https://fonts.googleapis.com/css?family=Tajawal');
+
+
+/* .jumbotron { 
+    padding:70px 30px 70px 30px; 
+    margin:0px auto; 
+    background: teal; 
+    color:floralwhite; } */
+
+    @import url('https://fonts.googleapis.com/css?family=Tajawal');
+
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 section{
@@ -150,8 +161,18 @@ header{float: left; width:100%}
 .action-box{float:left; width:100%; text-align:center;}
 .action-box h2{color:#fff; font-size:20px;}
 
+
 /* PANOS END */
 /* MARIA START */
+
+/* .row-content {
+  margin:0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height:400px;
+} */
+
+
 /* Centered text */
 .centered {
   position: absolute;
