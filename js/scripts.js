@@ -1,5 +1,5 @@
 //JavaScript goes here
-
+//Panos
 $('#myTab a').click(function (e) {
   e.preventDefault()
   $(this).tab('show')
@@ -20,8 +20,9 @@ var dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 var newDate = new Date();
 newDate.setDate(newDate.getDate() + 1);
 $('#Date').html(dayNames[newDate.getDay()] + ", " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+//Panos END
 
-
+//Maria start
 //Carousel slide
 $(document).ready(function () {
   $("#carouselDonate").carousel({ interval: 2000 });
@@ -32,4 +33,4 @@ $(document).ready(function () {
     $("#carouselDonate").carousel('cycle');
   });
 });
-
+//Maria END
