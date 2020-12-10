@@ -7,9 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <!-- Bootstrap CSS -->
+  <!-- build:css css/main.css -->
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <!-- <link href="css/styles.css" rel="stylesheet"> -->
+  <!-- endbuild -->
   <!-- style for maps here -->
   <style>
     html,
@@ -118,11 +120,11 @@
           <div class="form-group row">
             <fieldset id="rField" style="border:none; margin:0px; padding:0">
               <h4 class="w-100 font-weight-bold">Open a Donation Campaign</h4>
-              <input type="radio" id="radioNo" name="radioX" value="No"/>
+              <input type="radio" id="radioNo" name="radioX" value="No" />
               <label for="radioNo">No</label><br>
-              <input type="radio" id="radioYes" name="radioX" value="Yes" checked/>
+              <input type="radio" id="radioYes" name="radioX" value="Yes" checked />
               <label for="radioYes">Yes</label>
-           </fieldset>
+            </fieldset>
           </div>
 
           <!-- content visible IF yes selected -->
@@ -143,7 +145,8 @@
 
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <button id="addEventModalID" class="btn btn-primary" data-dismiss="modal">ADD Event <i class="fas fa-paper-plane-o ml-1"></i></button>
+          <button id="addEventModalID" class="btn btn-primary" data-dismiss="modal">ADD Event <i
+              class="fas fa-paper-plane-o ml-1"></i></button>
         </div>
       </div>
     </div>
@@ -151,79 +154,85 @@
 
   <!-- DONATE MODAL -->
   <!-- donate modal code goes here -->
-  <div id="donateModalID" class="modal fade mt-5" role="dialog"> 
+  <div id="donateModalID" class="modal fade mt-5" role="dialog">
     <div class="modal-dialog modal-lg" role="content">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Enter Ammount in Euro &euro;</h3>
-            </div>
-            <div class="card-body bg-white">
-                <form id="resForm">
-                    <div class="form-group row">
-                        <label class="col-12 col-sm-4">Donate</label>
-                        <div class="col col-sm">
-                            <div class="form-check form-check-inline">
-                                <input  class="form-check-input" type="radio" name="inlineRadioOptions" value="option1" id="inlineRadio1">
-                                <label class="form-check-label" for="inlineRadio1">10&euro;</label>
-                            </div>    
-
-                            <div class="form-check form-check-inline">
-                                <input  class="form-check-input" type="radio" name="inlineRadioOptions" value="option2" id="inlineRadio2">
-                                <label class="form-check-label" for="inlineRadio2">20&euro;</label>
-                            </div>
-                                
-                            <div class="form-check form-check-inline">
-                                <input  class="form-check-input" type="radio" name="inlineRadioOptions" value="option3" id="inlineRadio3">
-                                <label class="form-check-label" for="inlineRadio3">30&euro;</label>
-                            </div>
-                                
-                            <div class="form-check form-check-inline">
-                                <input  class="form-check-input" type="radio" name="inlineRadioOptions" value="option4" id="inlineRadio4">
-                                <label class="form-check-label" for="inlineRadio4">40&euro;</label>
-                            </div>
-                                
-                            <div class="form-check form-check-inline">
-                                <input  class="form-check-input" type="radio" name="inlineRadioOptions" value="option5" id="inlineRadio5">
-                                <label class="form-check-label" for="inlineRadio1">50&euro;</label>
-                            </div>
-                                
-                            <div class="form-check form-check-inline">
-                                <input  class="form-check-input" type="radio" name="inlineRadioOptions" value="option6" id="inlineRadio6">
-                                <label class="form-check-label" for="inlineRadio1">100&euro;</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-
-                    
-                        <a class="badge badge-success">Your Donation is very importand</a>
-                        
-                    
-                        <label class="col col-sm">Account name</label>
-                        <div class="input-group col-12 col-sm-4">
-                            <div class="input-group-prepend">
-                                <span id="accountNameText">Name</span>
-                            </div>
-                            
-                        </div>
-                        <br><br>
-                        <label class="col col-sm">IBAN</label>
-                        <div class="input-group col-12 col-sm-4">
-                            <div class="input-group-prepend">
-                                <span id="accountIBANText">An Account IBAN</span>
-                            </div>
-                            
-                        </div>    
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-default btn-sm" type="cancel" data-dismiss="modal">Cancel</button>
-                <button class="btn btn-default btn-primary" type="submit">Submit</button>
-            </div>
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Enter Ammount in Euro &euro;</h3>
         </div>
+        <div class="card-body bg-white">
+          <form id="resForm">
+            <div class="form-group row">
+              <label class="col-12 col-sm-4">Donate</label>
+              <div class="col col-sm">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option1"
+                    id="inlineRadio1">
+                  <label class="form-check-label" for="inlineRadio1">10&euro;</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option2"
+                    id="inlineRadio2">
+                  <label class="form-check-label" for="inlineRadio2">20&euro;</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option3"
+                    id="inlineRadio3">
+                  <label class="form-check-label" for="inlineRadio3">30&euro;</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option4"
+                    id="inlineRadio4">
+                  <label class="form-check-label" for="inlineRadio4">40&euro;</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option5"
+                    id="inlineRadio5">
+                  <label class="form-check-label" for="inlineRadio1">50&euro;</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option6"
+                    id="inlineRadio6">
+                  <label class="form-check-label" for="inlineRadio1">100&euro;</label>
+                </div>
+              </div>
+            </div>
+
+
+
+            <a class="badge badge-success">Your Donation is very importand</a>
+
+
+            <label class="col col-sm">Account name</label>
+            <div class="input-group col-12 col-sm-4">
+              <div class="input-group-prepend">
+                <span id="accountNameText">Name</span>
+              </div>
+
+            </div>
+            <br><br>
+            <label class="col col-sm">IBAN</label>
+            <div class="input-group col-12 col-sm-4">
+              <div class="input-group-prepend">
+                <span id="accountIBANText">An Account IBAN</span>
+              </div>
+
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default btn-sm" type="cancel" data-dismiss="modal">Cancel</button>
+          <button class="btn btn-default btn-primary" type="submit">Submit</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
 
   <!-- LOCATIONS PAGE END - ARIS&MARIA -->
@@ -241,14 +250,117 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyKBM2dqKGmOVKbm30ZpvNamBQbDdWAZk&callback=initMap">
     </script>
 
+  <!-- MAP SCRIPT FULL -->
+  <script>
+    var map;
+    function initMap() {
+      //Contructor creates a new map - only center and zoom required
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 37.96639, lng: 23.73513 },
+        zoom: 13
+      });
+
+      //Test marker
+      var acropolis = { lat: 37.97157, lng: 23.72582 };
+      var marker = new google.maps.Marker({
+        position: acropolis,
+        map: map,
+        title: "Acropolis - Test Marker"
+      });
+
+      //Array of markers
+      var markers = [
+        { lat: 38.00335152618623, lng: 23.74245093801985 },
+        { lat: 38.02189450633734, lng: 23.747306768389443 },
+      ];
+
+      //iterate markers array
+      for (var i = 0; i < markers.length; i++) {
+        addMarker(markers[i]);
+      }
+
+      //Add marker function
+      function addMarker(coords, contentInfo) {
+        var marker = new google.maps.Marker({
+          position: coords,
+          content: contentInfo,
+          map: map
+        });
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentInfo
+        });
+
+        //marker listener
+        marker.addListener("click", function () {
+          infowindow.open(map, marker);
+        });
+
+        //ADD NEW MARKER Functionality
+        var addEvent = document.getElementById("addEventModalID");
+
+        console.log(infowindow);
+        addEvent.onclick = function () {
+          var latitude = document.getElementById("eventLat").value;
+          var longtitude = document.getElementById("eventLong").value;
+
+          //adds the coords to the markers array
+          markers.push({ lat: parseFloat(latitude), lng: parseFloat(longtitude) });
+
+          //fill the info window from user input (add event modal)
+          var eventName = document.getElementById("eventName").value;
+          var eventDate = document.getElementById("eventDate").value;
+          var eventDescription = document.getElementById("eventDescription").value;
+          var donate = document.getElementById("radioYes");
+          var donateNo = document.getElementById("radioNo");
+
+          contentInfo = "<h5>" + eventName + "</h5><br>" +
+            "<div><strong>" + marker.getPosition() + "</strong></div><br>" +
+            "<div>Day:" + eventDate + "<div><br>" +
+            "<div>Info:" + eventDescription + "<div><br>" +
+            "<a href='./contactus.html' target='_blank'>Ask for help!</a><br><br>" +
+            "<div>" + donation() + "</div>";
+          console.log(contentInfo);
+
+
+          function donation() {
+            if (donate.checked) {
+              return '<input type="button" id="donateButton" class="btn btn-info btn-block" value="Donate" data-toggle="modal" data-target="#donateModalID">';
+            } else if (donateNo.checked) {
+              return '<p class="badge badge-danger">Donations are closed for this event</p>';
+            }
+          }
+          console.log(markers);
+          addMarker(markers[markers.length - 1], contentInfo); //adds the new marker to the map
+        }
+      }
+    }
+
+
+    //  Donate Radio Modal VIEW script
+    var radiosField = document.getElementById("rField");
+    var myRadioNo = document.getElementById("radioNo");
+    var donation = document.getElementById("donationID");
+
+    radiosField.onclick = function () {
+      if (myRadioNo.checked) {
+        donation.style.display = "none";
+      } else {
+        donation.style.display = "block";
+      }
+    }
+  </script>
+
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
+
+  <!-- build:js js/main.js -->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/tether/dist/js/tether.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="js/map.js"></script>
   <script src="js/scripts.js"></script>
+  <!-- endbuild -->
 
 </body>
 
