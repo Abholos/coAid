@@ -25,7 +25,7 @@ $('#Date').html(dayNames[newDate.getDay()] + ", " + newDate.getDate() + ' ' + mo
 //Maria start
 //Carousel slide
 $(document).ready(function () {
-  $("#carouselDonate").carousel({ interval: 2000 });
+  $("#carouselDonate").carousel({ interval: 1000 });
   $("#carousel-pause").click(function () {
     $("#carouselDonate").carousel('pause');
   });

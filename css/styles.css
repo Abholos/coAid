@@ -151,11 +151,44 @@ header{float: left; width:100%}
 .action-box h2{color:#fff; font-size:20px;}
 
 /* PANOS END */
+
+
 /* MARIA START */
+.imgitm{
+min-height: 600px;
+}
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+#carouselButtons {
+  right:0px;
+  position: absolute;
+  bottom: 0px;
+  z-index: +1;
+}
+
+
 /* Centered text */
 .centered {
   position: absolute;
-  top: 65%;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+
+.clstext {
+  position: absolute;
+  bottom: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+
+.clsbtn {
+  position: absolute;
+  bottom: 5%;
   left: 50%;
   transform: translate(-50%, -50%);  
 }
@@ -177,17 +210,15 @@ header{float: left; width:100%}
 .thanks {
   font-size: medium;
   position: absolute;
-  top: 50%;
+  top: 0%;
   left: 50%;
-  transform: translate(-50%, -50%);  
+  transform: translate(-50%, -50%);
+  /* color: red;   */
 } 
 
 ol li {
   color: red;
 }
 
-.carousel-inner > .item > img {
-  width:1280px;
-  height:720px;
-}
+
 /* MARIA END */
