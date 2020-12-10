@@ -31,35 +31,43 @@
 
 <body>
 
+  <!-- NAVBAR START -->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a href="./index.html"><img src="images/logo.png" height="80" width="80"></a>
 
-    <a class="navbar-brand" href="./index.html"><img src="#" height="40" width="54">co-A-id</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="Navbar">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
-            Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="./facts.html"><span class="fa fa-info fa-lg"></span>
-            Facts</a></li>
-        <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span>
-            Locations</a>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>
-            Contact - FAQ</a>
-        </li>
-      </ul>
-      <!-- we can use  ml-auto on the span so the login goes right -->
-      <span class="navbar-text">
-        <a data-toggle="modal" data-target="#loginModal">
-          <span class="fa fa-sign-in"></span> Login
-        </a>
-      </span>
+      <div class="collapse navbar-collapse" id="Navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
+              Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./facts.html"><span class="fa fa-info fa-lg"></span>
+              Facts</a></li>
+          <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-map-marker"></span>
+              Locations</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="./contactus.html"><span
+                class="fa fa-address-card fa-lg"></span>
+              Contact - FAQ</a>
+          </li>
+        </ul>
+        <!-- Sign Up button-->
+        <span class="navbar-text">
+          <a role="button" class="btn btn-secondary btn-sm mr-1" data-toggle="modal" data-target="#signupModal">
+            <span class="fa fa-user-plus"></span> Sign Up
+          </a>
+        </span>
+        <!-- Sign in button-->
+        <span class="navbar-text">
+          <a role="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#loginModal">
+            <span class="fa fa-sign-in"></span> Sign In
+          </a>
+        </span>
+      </div>
     </div>
-
   </nav>
 
   <!-- LOCATIONS PAGE START - ARIS&MARIA -->
