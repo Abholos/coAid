@@ -133,7 +133,7 @@ function initMap() {
   //Contructor creates a new map - only center and zoom required
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 37.96639, lng: 23.73513 },
-    zoom: 12,
+    zoom: 11,
     mapTypeControl: false,
     styles: styles[localStorage.getItem('map')],
     //markers: localStorage.getItem('map'),
@@ -159,15 +159,14 @@ function initMap() {
 
 
   //Test marker
-  new google.maps.Marker({
-    position: { lat: 37.97157, lng: 23.72582 },
-    map: map,
-    title: "Acropolis - Test Marker"
-  })
+  // new google.maps.Marker({
+  //   position: { lat: 37.97157, lng: 23.72582 },
+  //   map: map,
+  //   title: "Acropolis - Test Marker"
+  // })
 
   var coords = [
-    { lat: 38.00335152618623, lng: 23.74245093801985 },
-    { lat: 38.02189450633734, lng: 23.747306768389443 },
+
   ];
   //iterate markers array
   for (var i = 0; i < coords.length; i++) {
@@ -237,6 +236,7 @@ function geocodeAddress(geocoder, resultsMap) {
   //console.log(document.getElementById("address").value);
   geocoder.geocode({ address: address }, function (results, status) {
     if (status === "OK") {
+      map.setCenter(results[0].geometry.location);
       addMarker(results[0].geometry.location);
     } else {
       alert("Geocode was not successful for the following reason: " + status);
