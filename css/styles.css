@@ -463,61 +463,244 @@ header {
 }
 
 /* PANOS END */
+
+/* ############################################### */
+
 /* MARIA START */
 
-.imgitm {
-  min-height: 600px;
+#Navbar li.active a {
+  color: orangered;
 }
 
-.carousel-item img {
+#Navbar .nav-link:hover {
+  color: red;
+}
+/* Carousel */
+/* Indicators color */
+li.colindic {
+  background-color: rgb(189, 178, 178);
+}
+.txtshadowhite {
+  text-shadow: 2px 2px #fcfffb;
+}
+/* Carousel */
+hr {
+  margin-top: 3%;
+  overflow: visible; /* For IE */
+  height: 30px;
+  border-style: solid;
+  border-color: lightgray;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+  width: 60%;
+}
+hr:before {
+  /* Not really supposed to work, but does */
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: lightgray;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+
+/* text event */
+
+/* text event */
+
+/* SAFETY ADVICE */
+
+.imgsafety {
+  height: 250px;
+  width: 100%;
+}
+.item {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.item-card {
+  border-radius: 5%;
+  transition: 0.5s;
+  cursor: pointer;
+  background-color: #e0e7f1;
+}
+/* .item-card-title{  
+font-size:15px;
+transition:1s;
+cursor:pointer;
+} */
+/* .item-card-title i{  
+font-size:15px;
+transition:1s;
+cursor:pointer;
+color:#ffa710
+} */
+/* .card-title i:hover{
+transform: scale(1.25) rotate(100deg); 
+color:#18d4ca;
+} */
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.card-text {
+  height: 150px;
+}
+
+.card::before,
+.card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform 0.3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: "";
+  pointer-events: none;
+}
+.card::before {
+  transform-origin: left top;
+}
+.card::after {
+  transform-origin: right bottom;
+}
+.card:hover::before,
+.card:hover::after,
+.card:focus::before,
+.card:focus::after {
+  transform: scale3d(1, 1, 1);
+}
+/* SAFETY ADVICE */
+
+/* Our team */
+#boothead {
+  color: black;
+  margin: 40px 0 60px 0;
+  font-weight: 300;
+}
+.our-team-main {
+  width: 100%;
+  height: auto;
+  border-bottom: 5px #323233 solid;
+  background: #fff;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s;
+  margin-bottom: 28px;
+}
+.our-team-main img {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  width: 90px;
+}
+
+.our-team-main h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.our-team-main p {
+  margin-bottom: 0;
+}
+
+.team-back {
+  width: 100%;
+  height: auto;
   position: absolute;
   top: 0;
   left: 0;
+  padding: 5px 15px 0 15px;
+  text-align: left;
+  background: #fff;
 }
 
-/* .row-content {
-  margin:0px auto;
-  padding: 50px 0px 50px 0px;
-  border-bottom: 1px ridge;
-  min-height:400px;
-} */
+.team-front {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 10;
+  background: #fff;
+  padding: 15px;
+  bottom: 0px;
+  transition: all 0.5s ease;
+}
+.our-team-main:hover .team-front {
+  bottom: -200px;
+  transition: all 0.5s ease;
+}
 
-/* Centered text */
-.centered {
+.our-team-main:hover {
+  border-color: #777;
+  transition: 0.5s;
+}
+/* Our team */
+.footer {
+  color: white;
+}
+
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0); /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
   position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
 }
 
-.clothstext {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
 }
-
-.clothsbtn {
-  position: absolute;
-  top: 110%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.thanks {
-  font-size: medium;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-ol li {
-  color: red;
-}
-
-/* .carousel-inner > .item > img {
-  width: 1280px;
-  height: 720px;
-} */
 /* MARIA END */
