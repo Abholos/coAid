@@ -698,6 +698,11 @@ hr:before {
   color: white;
 }
 
-/* .fa {
-  color: #4183d7;
-} */
+/* FORM VALIDATION */
+.required label:after {
+  content: "*";
+}
+
+.required h4:after {
+  content: "*";
+}

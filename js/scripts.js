@@ -323,6 +323,25 @@ function donation() {
 }
 //MAP main - Vissarion end
 
+// FORM VALIDATION
+var eventNameMod = document.getElementById("eventName");
+
+eventNameMod.oninput = function () {
+  if (!this.validity.valid) {
+    eventNameMod.style.backgroundImage = "url(./images/invalid.png)";
+    eventNameMod.style.backgroundRepeat = "no-repeat";
+    eventNameMod.style.backgroundPosition = "right center";
+    eventNameMod.style.border = "3px solid red";
+    eventNameModInfo.innerHTML = "<em>Please use at least 4 characters</em>";
+  } else {
+    eventNameMod.style.backgroundImage = "url(./images/valid.png)";
+    eventNameMod.style.backgroundRepeat = "no-repeat";
+    eventNameMod.style.backgroundPosition = "right center";
+    eventNameMod.style.border = "none";
+    eventNameModInfo.style.display = "none";
+  }
+}
+
 
 
 
