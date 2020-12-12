@@ -1,16 +1,4 @@
 /* PANOS START */
-@import url("https://fonts.googleapis.com/css?family=Tajawal");
-
-/* .jumbotron { 
-    padding:70px 30px 70px 30px; 
-    margin:0px auto; 
-    background: gray; 
-    color:floralwhite; } */
-
-@import url("https://fonts.googleapis.com/css?family=Tajawal");
-
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-
 section {
   padding: 60px 0;
 }
@@ -62,13 +50,6 @@ html.cdc-2020 .accordion .card-header:hover {
   border-top: 1px solid #bdbdbd;
 }
 
-@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
-
-/* body {
-  color: #5a5a5a;
-  font-family: "Open Sans", Arial, sans-serif;
-  font-size: 15px;
-} */
 h1,
 h2,
 h3,
@@ -506,10 +487,6 @@ hr:before {
   border-radius: 20px;
 }
 
-/* text event */
-
-/* text event */
-
 /* SAFETY ADVICE */
 
 .imgsafety {
@@ -526,21 +503,7 @@ hr:before {
   cursor: pointer;
   background-color: #e0e7f1;
 }
-/* .item-card-title{  
-font-size:15px;
-transition:1s;
-cursor:pointer;
-} */
-/* .item-card-title i{  
-font-size:15px;
-transition:1s;
-cursor:pointer;
-color:#ffa710
-} */
-/* .card-title i:hover{
-transform: scale(1.25) rotate(100deg); 
-color:#18d4ca;
-} */
+
 .card:hover {
   transform: scale(1.03);
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
@@ -703,4 +666,38 @@ color:#18d4ca;
     right: 35px;
   }
 }
+
 /* MARIA END */
+
+.social-box .box {
+  /* background: #fff; */
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.social-box .box:hover {
+  box-shadow: 0 0 6px #ffffff;
+}
+
+.social-box .box .box-text {
+  /* margin: 20px 0px; */
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.social-box .box .box-btn a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.box-text {
+  color: white;
+}
+
+/* .fa {
+  color: #4183d7;
+} */

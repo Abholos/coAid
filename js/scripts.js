@@ -222,6 +222,7 @@ function initMap() {
   // })
 
   var coords = [
+    { lat: 37.99326371499679, lng: 23.735884675423478 },
 
   ];
   //iterate markers array
@@ -244,6 +245,18 @@ function initMap() {
 }
 //MAP SCRIPT FULL END
 //ARIS END
+function geocodeAddress(geocoder, resultsMap) {
+  var address = document.getElementById("eventAddress").value;
+  //console.log(document.getElementById("address").value);
+  geocoder.geocode({ address: address }, function (results, status) {
+    if (status === "OK") {
+      map.setCenter(results[0].geometry.location);
+      addMarker(results[0].geometry.location);
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
+    }
+  });
+}
 
 function addMarker(coords) {
 
@@ -284,20 +297,6 @@ function addMarker(coords) {
 
   });
 
-}
-
-
-function geocodeAddress(geocoder, resultsMap) {
-  var address = document.getElementById("eventAddress").value;
-  //console.log(document.getElementById("address").value);
-  geocoder.geocode({ address: address }, function (results, status) {
-    if (status === "OK") {
-      map.setCenter(results[0].geometry.location);
-      addMarker(results[0].geometry.location);
-    } else {
-      alert("Geocode was not successful for the following reason: " + status);
-    }
-  });
 }
 
 function donation() {
