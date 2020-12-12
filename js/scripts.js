@@ -4,7 +4,7 @@ var map;
 //Array of markers
 var markers = [];
 var localM = [];
-//JavaScript goes here
+
 //Panos
 $('#myTab a').click(function (e) {
   e.preventDefault()
@@ -41,6 +41,7 @@ $(document).ready(function () {
 });
 //Maria END
 
+//MAP - ARIS
 
 function initMap() {
   var styles = {
@@ -188,28 +189,9 @@ function initMap() {
 }
 //MAP SCRIPT FULL END
 //ARIS END
-function donation() {
-  var radiosField = document.getElementById("rField");
-  var myRadioNo = document.getElementById("radioNo");
-  var donation = document.getElementById("donationID");
 
-  radiosField.onclick = function () {
-    if (myRadioNo.checked) {
-      donation.style.display = "none";
-    } else {
-      donation.style.display = "block";
-    }
-  }
-
-  var donate = document.getElementById("radioYes");
-  var donateNo = document.getElementById("radioNo");
-  if (donate.checked) {
-    return '<input type="button" id="donateButton" class="btn btn-info btn-block" value="Donate" data-toggle="modal" data-target="#donateModalID">';
-  } else if (donateNo.checked) {
-    return '<p class="badge badge-danger">Donations are closed for this event</p>';
-  }
-}
 function addMarker(coords) {
+
   //fill the info window from user input (add event modal)
   var eventName = document.getElementById("eventName").value;
   var eventDate = document.getElementById("eventDate").value;
@@ -242,8 +224,13 @@ function addMarker(coords) {
   markers.push(marker);
   //get localStorage for PINs
 
+  marker.addListener("click", function () {
+    infowindow.open(map, marker);
+
+  });
 
 }
+
 
 function geocodeAddress(geocoder, resultsMap) {
   var address = document.getElementById("eventAddress").value;
@@ -257,7 +244,27 @@ function geocodeAddress(geocoder, resultsMap) {
   });
 }
 
-//addMarker(results[0].geometry.location);
+function donation() {
+  var radiosField = document.getElementById("rField");
+  var myRadioNo = document.getElementById("radioNo");
+  var donation = document.getElementById("donationID");
+
+  radiosField.onclick = function () {
+    if (myRadioNo.checked) {
+      donation.style.display = "none";
+    } else {
+      donation.style.display = "block";
+    }
+  }
+
+  var donate = document.getElementById("radioYes");
+  var donateNo = document.getElementById("radioNo");
+  if (donate.checked) {
+    return '<input type="button" id="donateButton" class="btn btn-info btn-block" value="Donate" data-toggle="modal" data-target="#donateModalID">';
+  } else if (donateNo.checked) {
+    return '<p class="badge badge-danger">Donations are closed for this event</p>';
+  }
+}
 
 
 
