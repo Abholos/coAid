@@ -64,11 +64,11 @@ html.cdc-2020 .accordion .card-header:hover {
 
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 
-body {
+/* body {
   color: #5a5a5a;
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 15px;
-}
+} */
 h1,
 h2,
 h3,
@@ -465,6 +465,16 @@ header {
 /* PANOS END */
 /* MARIA START */
 
+.imgitm {
+  min-height: 600px;
+}
+
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 /* .row-content {
   margin:0px auto;
   padding: 50px 0px 50px 0px;
@@ -506,8 +516,8 @@ ol li {
   color: red;
 }
 
-.carousel-inner > .item > img {
+/* .carousel-inner > .item > img {
   width: 1280px;
   height: 720px;
-}
+} */
 /* MARIA END */

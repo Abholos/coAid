@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="icon" href="./images/logo.png">
   <title>Co-A-id</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,10 +24,14 @@
     }
 
     #map {
-      height: 80%;
+      /* margin-top: 3%; */
+      height: 70%;
     }
-  </style>
 
+    /* .breadcrumb{
+      margin-top: 5%;
+    } */
+  </style>
 </head>
 
 <body>
@@ -57,7 +62,7 @@
         <!-- Sign Up button-->
         <span class="navbar-text">
           <a role="button" class="btn btn-secondary btn-sm mr-1" data-toggle="modal" data-target="#signupModal">
-            <span class="fa fa-user-plus"></span> Sign Up
+            <span class="fa -plus"></span> Sign Up
           </a>
         </span>
         <!-- Sign in button-->
@@ -68,15 +73,35 @@
         </span>
       </div>
     </div>
-  </nav>
+  </nav><br><br><br><br>
+
+  <!--breadcrumb-->
+
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Locations</li>
+  </ol>
+
+  <!--breadcrumb-->
+
+
 
   <!-- LOCATIONS PAGE START - ARIS&MARIA -->
+  <div id="style-selector-control" class="map-control">
+    <select id="style-selector" class="selector-control">
+      <option value="default">Default</option>
+      <option value="night">Night mode</option>
+    </select>
+  </div>
   <div id="map"></div>
+
+
 
   <!-- ADD EVENT BUTTON -->
   <div class="container" style="margin-top:20px;">
-    <input id="addEventID" type="button" class="btn btn-block btn-info" value="ADD NEW EVENT" data-toggle="modal"
-      data-target="#modalAddShelterForm" style="padding: 10px; font-size:16px; font-weight:bold">
+    <input id="addEventID" type="button" class="btn btn-block" value="ADD NEW EVENT" data-toggle="modal"
+      data-target="#modalAddShelterForm"
+      style="padding: 10px; font-size:16px; font-weight:bold; background-color:#242f3e; color:#c78d60">
   </div>
 
   <!-- Add event button listener -->
@@ -96,31 +121,42 @@
         </div>
         <div class="modal-body mx-3">
           <div class="form-group row">
-            <i class="fas fa-user prefix grey-text"></i>
+            <i class=" prefix grey-text"></i>
             <input type="text" id="eventName" class="form-control validate">
             <label data-error="wrong" data-success="right" for="eventName">Event name</label>
           </div>
 
-          <div class="form-group row">
-            <i class="fas fa-user prefix grey-text"></i>
+          <!-- <div class="form-group row">
+            <i class=" prefix grey-text"></i>
             <input type="number" step="any" id="eventLat" class="form-control validate">
             <label data-error="wrong" data-success="right" for="eventLat">Location latitude</label>
           </div>
 
           <div class="form-group row">
-            <i class="fas fa-user prefix grey-text"></i>
+            <i class=" prefix grey-text"></i>
             <input type="number" step="any" id="eventLong" class="form-control validate">
             <label data-error="wrong" data-success="right" for="eventLong">Location longitude</label>
+          </div> -->
+
+
+
+          <!-- FIELDS TO GEOCODE START-->
+          <div class="form-group row">
+            <i class=" prefix grey-text"></i>
+            <input type="text" id="eventAddress" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="eventName">Full address and city, <em>eg: (Karaiskaki 17, Athina 105 54)</em></label>
           </div>
+          <!-- FIELDS TO GEOCODE END-->
+
 
           <div class="form-group row">
-            <i class="fas fa-envelope prefix grey-text"></i>
+            <i class=" prefix grey-text"></i>
             <input type="date" id="eventDate" class="form-control validate">
             <label data-error="wrong" data-success="right" for="eventDate">Date</label>
           </div>
 
           <div class="form-group row">
-            <i class="fas fa-pencil prefix grey-text"></i>
+            <i class=" prefix grey-text"></i>
             <textarea type="text" id="eventDescription" class="md-textarea form-control" rows="4"></textarea>
             <label data-error="wrong" data-success="right" for="eventDescription">Event Description</label>
           </div>
@@ -138,13 +174,13 @@
           <!-- content visible IF yes selected -->
           <div id="donationID">
             <div class="form-group row">
-              <i class="fas fa-user prefix grey-text"></i>
+              <i class=" prefix grey-text"></i>
               <input type="text" id="accountName" class="form-control validate">
               <label data-error="wrong" data-success="right" for="accountName">Account Name</label>
             </div>
 
             <div class="form-group row">
-              <i class="fas fa-user prefix grey-text"></i>
+              <i class=" prefix grey-text"></i>
               <input type="number" id="iban" class="form-control validate">
               <label data-error="wrong" data-success="right" for="iban">IBAN</label>
             </div>
@@ -154,7 +190,7 @@
         </div>
         <div class="modal-footer d-flex justify-content-center">
           <button id="addEventModalID" class="btn btn-primary" data-dismiss="modal">ADD Event <i
-              class="fas fa-paper-plane-o ml-1"></i></button>
+              class="ml-1"></i></button>
         </div>
       </div>
     </div>
@@ -246,118 +282,13 @@
   <!-- LOCATIONS PAGE END - ARIS&MARIA -->
 
   <footer>
-    <div class="row justify-content-center navbar-dark bg-dark fixed-bottom" style="color:white;">
+    <div class="row justify-content-center navbar-dark bg-dark"
+      style="color:white; margin-top:3.5%; padding:10px 0 10px 0;">
       <div class="col-auto">
         <p> &copy; Copyright 2020 co-A-id</p>
       </div>
     </div>
   </footer>
-
-  <!-- MAP EMBED -->
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyKBM2dqKGmOVKbm30ZpvNamBQbDdWAZk&callback=initMap">
-    </script>
-
-  <!-- MAP SCRIPT FULL -->
-  <script>
-    var map;
-    function initMap() {
-      //Contructor creates a new map - only center and zoom required
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 37.96639, lng: 23.73513 },
-        zoom: 13
-      });
-
-      //Test marker
-      var acropolis = { lat: 37.97157, lng: 23.72582 };
-      var marker = new google.maps.Marker({
-        position: acropolis,
-        map: map,
-        title: "Acropolis - Test Marker"
-      });
-
-      //Array of markers
-      var markers = [
-        { lat: 38.00335152618623, lng: 23.74245093801985 },
-        { lat: 38.02189450633734, lng: 23.747306768389443 },
-      ];
-
-      //iterate markers array
-      for (var i = 0; i < markers.length; i++) {
-        addMarker(markers[i]);
-      }
-
-      //Add marker function
-      function addMarker(coords, contentInfo) {
-        var marker = new google.maps.Marker({
-          position: coords,
-          content: contentInfo,
-          map: map
-        });
-
-        var infowindow = new google.maps.InfoWindow({
-          content: contentInfo
-        });
-
-        //marker listener
-        marker.addListener("click", function () {
-          infowindow.open(map, marker);
-        });
-
-        //ADD NEW MARKER Functionality
-        var addEvent = document.getElementById("addEventModalID");
-
-        console.log(infowindow);
-        addEvent.onclick = function () {
-          var latitude = document.getElementById("eventLat").value;
-          var longtitude = document.getElementById("eventLong").value;
-
-          //adds the coords to the markers array
-          markers.push({ lat: parseFloat(latitude), lng: parseFloat(longtitude) });
-
-          //fill the info window from user input (add event modal)
-          var eventName = document.getElementById("eventName").value;
-          var eventDate = document.getElementById("eventDate").value;
-          var eventDescription = document.getElementById("eventDescription").value;
-          var donate = document.getElementById("radioYes");
-          var donateNo = document.getElementById("radioNo");
-
-          contentInfo = "<h5>" + eventName + "</h5><br>" +
-            "<div><strong>" + marker.getPosition() + "</strong></div><br>" +
-            "<div>Day:" + eventDate + "<div><br>" +
-            "<div>Info:" + eventDescription + "<div><br>" +
-            "<a href='./contactus.html' target='_blank'>Ask for help!</a><br><br>" +
-            "<div>" + donation() + "</div>";
-          console.log(contentInfo);
-
-
-          function donation() {
-            if (donate.checked) {
-              return '<input type="button" id="donateButton" class="btn btn-info btn-block" value="Donate" data-toggle="modal" data-target="#donateModalID">';
-            } else if (donateNo.checked) {
-              return '<p class="badge badge-danger">Donations are closed for this event</p>';
-            }
-          }
-          console.log(markers);
-          addMarker(markers[markers.length - 1], contentInfo); //adds the new marker to the map
-        }
-      }
-    }
-
-
-    //  Donate Radio Modal VIEW script
-    var radiosField = document.getElementById("rField");
-    var myRadioNo = document.getElementById("radioNo");
-    var donation = document.getElementById("donationID");
-
-    radiosField.onclick = function () {
-      if (myRadioNo.checked) {
-        donation.style.display = "none";
-      } else {
-        donation.style.display = "block";
-      }
-    }
-  </script>
 
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
@@ -370,6 +301,10 @@
   <script src="js/scripts.js"></script>
   <!-- endbuild -->
 
+  <!-- MAP EMBED -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyKBM2dqKGmOVKbm30ZpvNamBQbDdWAZk&callback=initMap">
+    </script>
 </body>
 
 </html>

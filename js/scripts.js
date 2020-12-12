@@ -1,3 +1,9 @@
+//MAP SCRIPT FULL - ARIS START
+var geocoder;
+var map;
+//Array of markers
+var markers = [];
+var localM = [];
 //JavaScript goes here
 //Panos
 $('#myTab a').click(function (e) {
@@ -6,9 +12,9 @@ $('#myTab a').click(function (e) {
 })
 
 
-$(window).load(function () {
-  var boxheight = $('#myCarousel .carousel-inner').innerHeight();
-  var itemlength = $('#myCarousel .item').length;
+$(document).ready(function () {
+  var boxheight = $('#myCarousel .cInner').innerHeight();
+  var itemlength = $('#myCarousel').length;
   var triggerheight = Math.round(boxheight / itemlength + 1);
   $('#myCarousel .list-group-item').outerHeight(triggerheight);
 });
@@ -34,6 +40,227 @@ $(document).ready(function () {
   });
 });
 //Maria END
+
+
+function initMap() {
+  var styles = {
+    default: [],
+
+    night: [
+      { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+      { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+      { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+      {
+        featureType: "administrative.locality",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#d59563" }],
+      },
+      {
+        featureType: "poi",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#d59563" }],
+      },
+      {
+        featureType: "poi.park",
+        elementType: "geometry",
+        stylers: [{ color: "#263c3f" }],
+      },
+      {
+        featureType: "poi.park",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#6b9a76" }],
+      },
+      {
+        featureType: "road",
+        elementType: "geometry",
+        stylers: [{ color: "#38414e" }],
+      },
+      {
+        featureType: "road",
+        elementType: "geometry.stroke",
+        stylers: [{ color: "#212a37" }],
+      },
+      {
+        featureType: "road",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#9ca5b3" }],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "geometry",
+        stylers: [{ color: "#746855" }],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "geometry.stroke",
+        stylers: [{ color: "#1f2835" }],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#f3d19c" }],
+      },
+      {
+        featureType: "transit",
+        elementType: "geometry",
+        stylers: [{ color: "#2f3948" }],
+      },
+      {
+        featureType: "transit.station",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#d59563" }],
+      },
+      {
+        featureType: "water",
+        elementType: "geometry",
+        stylers: [{ color: "#17263c" }],
+      },
+      {
+        featureType: "water",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#515c6d" }],
+      },
+      {
+        featureType: "water",
+        elementType: "labels.text.stroke",
+        stylers: [{ color: "#17263c" }],
+      },
+    ]
+  }
+
+
+  //Contructor creates a new map - only center and zoom required
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 37.96639, lng: 23.73513 },
+    zoom: 12,
+    mapTypeControl: false,
+    styles: styles[localStorage.getItem('map')],
+    //markers: localStorage.getItem('map'),
+  });
+
+  //geocoder inst
+  geocoder = new google.maps.Geocoder();
+
+  // Add a style-selector control to the map.
+  var styleControl = document.getElementById("style-selector-control");
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(styleControl);
+
+
+  // Set the map's style to the initial value of the selector.
+  var styleSelector = document.getElementById("style-selector");
+  //map.setOptions({ styles: styles[styleSelector.value] });
+
+  // Apply new JSON when the user selects a different style.
+  styleSelector.addEventListener("change", function () {
+    map.setOptions({ styles: styles[styleSelector.value] });
+    localStorage.setItem('map', styleSelector.value);
+  });
+
+
+  //Test marker
+  new google.maps.Marker({
+    position: { lat: 37.97157, lng: 23.72582 },
+    map: map,
+    title: "Acropolis - Test Marker"
+  })
+
+  var coords = [
+    { lat: 38.00335152618623, lng: 23.74245093801985 },
+    { lat: 38.02189450633734, lng: 23.747306768389443 },
+  ];
+  //iterate markers array
+  for (var i = 0; i < coords.length; i++) {
+    addMarker(coords[i]);
+    //add marker and infoWindow to localStorage
+    //localStorage[markers] = JSON.stringify(markers);
+  }
+
+  //ADD NEW MARKER Functionality
+  var addEvent = document.getElementById("addEventModalID");
+
+  //console.log(infowindow);
+  addEvent.onclick = function () {
+    //var latitude = document.getElementById("eventLat").value;
+    //var longtitude = document.getElementById("eventLong").value;
+    //markers.push({ lat: parseFloat(latitude), lng: parseFloat(longtitude) });
+    geocodeAddress(geocoder, map);
+  }
+}
+//MAP SCRIPT FULL END
+//ARIS END
+function donation() {
+  var radiosField = document.getElementById("rField");
+  var myRadioNo = document.getElementById("radioNo");
+  var donation = document.getElementById("donationID");
+
+  radiosField.onclick = function () {
+    if (myRadioNo.checked) {
+      donation.style.display = "none";
+    } else {
+      donation.style.display = "block";
+    }
+  }
+
+  var donate = document.getElementById("radioYes");
+  var donateNo = document.getElementById("radioNo");
+  if (donate.checked) {
+    return '<input type="button" id="donateButton" class="btn btn-info btn-block" value="Donate" data-toggle="modal" data-target="#donateModalID">';
+  } else if (donateNo.checked) {
+    return '<p class="badge badge-danger">Donations are closed for this event</p>';
+  }
+}
+function addMarker(coords) {
+  //fill the info window from user input (add event modal)
+  var eventName = document.getElementById("eventName").value;
+  var eventDate = document.getElementById("eventDate").value;
+  var eventDescription = document.getElementById("eventDescription").value;
+  var contentInfo = '';
+
+  var marker = new google.maps.Marker({
+    position: coords,
+    content: contentInfo,
+    map: map,
+    icon: './images/pinicored2.png'
+  });
+
+  contentInfo = "<h5>" + eventName + "</h5><br>" +
+    "<div><strong>" + marker.getPosition() + "</strong></div><br>" +
+    "<div style='font-size:16px'><strong>Day: </strong>" + eventDate + "<div><br>" +
+    "<div style='font-size:16px'><strong>Info: </strong>" + eventDescription + "<div><br>" +
+    "<a href='./contactus.html' target='_blank' style='font-size:16px'>Ask for help!</a><br><br>" +
+    "<div style='font-size:16px'>" + donation() + "</div>";
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentInfo
+  });
+
+  //marker listener
+  marker.addListener("click", function () {
+    infowindow.open(map, marker);
+  });
+
+  markers.push(marker);
+  //get localStorage for PINs
+
+
+}
+
+function geocodeAddress(geocoder, resultsMap) {
+  var address = document.getElementById("eventAddress").value;
+  //console.log(document.getElementById("address").value);
+  geocoder.geocode({ address: address }, function (results, status) {
+    if (status === "OK") {
+      addMarker(results[0].geometry.location);
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
+    }
+  });
+}
+
+//addMarker(results[0].geometry.location);
+
+
+
 
 
 
