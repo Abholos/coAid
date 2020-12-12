@@ -6,13 +6,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+
   <!-- Bootstrap CSS -->
+  <!-- build:css css/main.css -->
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-  <link rel="SHORTCUT ICON" href="logoico.ico" type="image/x-icon" sizes="16x16" />
-  <!--  <link rel="ICON" href="logoico" type="image/ico" /> -->
   <link href="css/styles.css" rel="stylesheet">
-
+  <!-- endbuild -->
 </head>
 
 <body>
@@ -131,11 +131,12 @@
       </div>
     </div>
   </div>
+
   <!-- HEADER START -->
   <header class="jumbotron">
-    <div class="container">
+    <div style="margin-top:5%;" class="container">
       <div class="row row-header">
-        <div class="col-12 col-sm-6 mt-5">
+        <div class="col-12 col-sm-6">
           <h1>co<span style="color: red;">&#8704;</span>id</h1>
           <p>As covid-19 spreads, more and more people are affected by the outcoming crisis not only medically, but also
             economically and psychologically. This site is providing information about points of interest where
@@ -143,7 +144,7 @@
             feeding, medical checking and other helpful activities targeting people in need.</p>
         </div>
         <div class="col-12 col-sm-3 m-auto" style="z-index: 1;">
-          <a role="button" class="btn btn-light mt-5" href="./locations.html"> <img src="images/joiningHands.jpg"
+          <a role="button" class="btn btn-light" href="./locations.html"> <img src="images/joiningHands.jpg"
               class="img-fluid">Check Active Events</a>
         </div>
       </div>
@@ -156,109 +157,303 @@
 
   <!-- CAROUSEL -->
   <div class="container col-12 col-sm-6 mb-5">
-    <div id="carouselDonate" class="carousel slide" data-ride="carousel">
+    <div id="carouselDonate" class="carousel slide carousel-fade" data-ride="carousel" data-interval="2000">
+      <ol class="carousel-indicators">
+        <li class="active colindic" data-target="#carouselDonate" data-slide-to="0"></li>
+        <li class="colindic" data-target="#carouselDonate" data-slide-to="1"></li>
+        <li class="colindic" data-target="#carouselDonate" data-slide-to="2"></li>
+        <li class="colindic" data-target="#carouselDonate" data-slide-to="3"></li>
+        <li class="colindic" data-target="#carouselDonate" data-slide-to="4"></li>
+        <li class="colindic" data-target="#carouselDonate" data-slide-to="5"></li>
+        <li class="colindic" data-target="#carouselDonate" data-slide-to="6"></li>
+        <li class="colindic" data-target="#carouselDonate" data-slide-to="7"></li>
+      </ol>
       <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active imgitm">
-          <img src="images/volunteerHand.jpg" class="d-block w-100" alt="Volunteer">
-          <div class="carousel-caption d-none d-md-block centered">
-            <p class="col text-dark">Become a Volunteer and help people in need!!!</p>
+        <div class="carousel-item active">
+          <img class="d-block img-fluid" src="images/volunteerHand.png" alt="Volunteer">
+          <div class="carousel-caption d-block">
           </div>
         </div>
-        <div class="carousel-item imgitm">
-          <img src="images/handMoney.jpg" class="d-block w-100" alt="donate money">
-          <div class="carousel-caption d-none d-md-block">
-            <p class="col text-dark">Donate Money</p>
-            <a role="button" class="btn btn-danger btn-sm" href="./locations.html">Donate</a>
-
-          </div>
-        </div>
-        <div class="carousel-item imgitm">
-          <img src="images/giveCloths.jpg" class="d-block w-100" alt="donate cloths">
-          <div class="carousel-caption d-none d-md-block">
-            <p class="col text-white clstext"> Donate Cloths</p>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="images/handMoney.png" alt="donate money">
+          <div class="carousel-caption">
+            <p class="text-dark text-center">Donate Money</p>
             <a role="button" class="btn btn-danger btn-sm clsbtn" href="./locations.html">Donate</a>
           </div>
         </div>
-        <div class="carousel-item imgitm">
-          <img src="images/giveFood.jpg" class="d-block w-100" alt="offer food">
-          <div class="carousel-caption d-none d-md-block">
-            <p class="col text-dark">Offer food to those in need!!!</p>
-            <a role="button" class="btn btn-danger btn-sm" href="./locations.html">Add an event</a>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="images/giveCloths.png" alt="donate cloths">
+          <div class="carousel-caption">
+            <p class="text-white text-center block"> Donate Cloths</p>
+            <a role="button" class="btn btn-danger btn-sm" href="./locations.html">Donate</a>
           </div>
         </div>
-        <div class="carousel-item imgitm">
-          <img src="images/shelters.jpg" class="d-block w-100" alt="add shelter">
-          <div class="carousel-caption d-none d-md-block">
-            <p class="col text-dark">Add locations that provide shelters for homeless</p>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="images/giveFood.png" alt="offer food">
+          <div class="carousel-caption">
+            <p class="text-white text-center">Offer food to those in need!!!</p>
+            <a role="button" class="btn btn-danger btn-sm txtshadow" href="./locations.html">Add an event</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="images/shelters.png" alt="add shelter">
+          <div class="carousel-caption">
+            <p class="text-white text-center txtshadow">Add locations that provide shelters for homeless</p>
             <a role="button" class="btn btn-danger btn-sm" href="./locations.html">Add a shelter</a>
           </div>
         </div>
-        <div class="carousel-item imgitm">
-          <img src="images/rapidTests.jpg" class="d-block w-100" alt="Rapid test locations">
-          <div class="carousel-caption d-none d-md-block">
-            <p class="col text-dark">Add locations that provide rapid tests for Covid-19</p>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="images/rapidTests.png" alt="Rapid test locations">
+          <div class="carousel-caption">
+            <p class="text-dark text-center">Add locations that provide rapid tests for Covid-19</p>
             <a role="button" class="btn btn-danger btn-sm" href="./locations.html">Add a location</a>
           </div>
         </div>
-        <div class="carousel-item imgitm">
-          <img src="images/firstAid.jpg" class="d-block w-100" alt="First Aid locations">
-          <div class="carousel-caption d-none d-md-block">
-            <p class="text-dark">Add locations that provide First Aid assistance</p>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="images/firstAid.png" alt="First Aid locations">
+          <div class="carousel-caption">
+            <p class="text-white bg-secondary text-center">Add locations that provide First Aid assistance</p>
             <a role="button" class="btn btn-danger btn-sm" href="./locations.html">Add a location</a>
           </div>
         </div>
-        <div class="carousel-item imgitm">
-          <img src="images/thankYou.jpg" class="d-block w-100" alt="thank you card">
-          <div class="carousel-caption d-none d-md-block">
-            <p class="text-dark thanks">Thank you supporting our cause!!!</p>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="images/thankYou.png" alt="thank you card">
+          <div class="carousel-caption">
           </div>
         </div>
-        <ol class="carousel-indicators">
-          <li data-target="#carouselDonate" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselDonate" data-slide-to="1"></li>
-          <li data-target="#carouselDonate" data-slide-to="2"></li>
-          <li data-target="#carouselDonate" data-slide-to="3"></li>
-          <li data-target="#carouselDonate" data-slide-to="4"></li>
-          <li data-target="#carouselDonate" data-slide-to="5"></li>
-          <li data-target="#carouselDonate" data-slide-to="6"></li>
-        </ol>
-        <a class="carousel-control-prev" href="#carouselDonate" role="button" data-slide="prev">
+
+        <!-- <a class="carousel-control-prev" href="#carouselDonate" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#carouselDonate" role="button" data-slide="next">
           <span class="carousel-control-next-icon bg-secondary" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
-        </a>
+        </a> -->
       </div>
-      <div class="btn-group" id="carouselButtons">
-        <button class="btn btn-light btn-sm" id="carousel-pause">
-          <span class="fa fa-pause"></span>
-        </button>
-        <button class="btn btn-light btn-sm" id="carousel-play">
-          <span class="fa fa-play"></span>
-        </button>
+    </div>
+  </div>
+  <hr>
+  <!-- CAROUSEL END-->
+
+  <!-- Covid Safety Advice cards START -->
+  <div class="container mt-3">
+    <h2 class="text-center mb-5">Common Safety Advice</h2>
+    <div class="row">
+      <div class="col-12 col-md-3 col-sm-6 item mb-2">
+        <div class="card item-card card-block">
+          <h4 class="item-card-title text-right"></h4>
+          <img class="imgsafety img-fluid" src="images/handWash.png" alt="Photo of sunset">
+          <h5 class="card-title  mt-3 mb-3 text-center">Wash your hands often</h5>
+          <p class="card-text">Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them
+            with soap and water.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 item mb-2">
+        <div class="card item-card card-block">
+          <h4 class="item-card-title text-right"></h4>
+          <img class="imgsafety img-fluid" src="images/wearingMask.png" alt="Photo of sunset">
+          <h5 class="card-title  mt-3 mb-3 text-center">Wear a mask</h5>
+          <p class="card-text">A mask is required around other people. The appropriate use, cleaning & disposal are
+            essential to make masks as effective.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 item mb-2">
+        <div class="card item-card card-block">
+          <h4 class="item-card-title text-right"></h4>
+          <img class="imgsafety img-fluid" src="images/socialDistance.png" alt="Photo of sunset">
+          <h5 class="card-title  mt-3 mb-3 text-center">Keep distance</h5>
+          <p class="card-text">Maintain at least a 1m distance between yourself and others to reduce the risk of
+            infection. The further away, the better.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 item mb-2">
+        <div class="card item-card card-block">
+          <h4 class="item-card-title text-right"></h4>
+          <img class="imgsafety img-fluid" src="images/stayHome.png" alt="Photo of sunset">
+          <h5 class="card-title  mt-3 mb-3 text-center">Stay at home</h5>
+          <p class="card-text">Stay home and self-isolate even if you have minor symptoms such as cough, headache, mild
+            fever, until you recover. </p>
+        </div>
       </div>
     </div>
   </div>
 
+  <hr>
+
+  <!-- The overlay -->
+  <div style="height: 85%; margin-top: 5%; " id="myNav" class="overlay">
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+      <a href="#">About</a>
+      <div class="row">
+        <div class="col-md-3 col-sm-6 item mb-2">
+          <div class="card item-card card-block">
+            <h4 class="item-card-title text-right"></h4>
+            <img class="imgsafety img-fluid" src="https://static.pexels.com/photos/7357/startup-photos.jpg"
+              alt="Photo of sunset">
+            <h5 class="card-title  mt-3 mb-3">ProVyuh</h5>
+            <p class="card-text">This is a company that builds websites, web .</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 item">
+          <div class="card item-card card-block">
+            <h4 class="item-card-title text-right"></h4>
+            <img class="imgsafety img-fluid" src="https://static.pexels.com/photos/7357/startup-photos.jpg"
+              alt="Photo of sunset">
+            <h5 class="card-title  mt-3 mb-3">ProVyuh</h5>
+            <p class="card-text">This is a company that builds websites, web .</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 item mb-2">
+          <div class="card item-card card-block">
+            <h4 class="item-card-title text-right"></h4>
+            <img class="imgsafety img-fluid" src="https://static.pexels.com/photos/262550/pexels-photo-262550.jpeg"
+              alt="Photo of sunset">
+            <h5 class="card-title  mt-3 mb-3">ProVyuh</h5>
+            <p class="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 item mb-2">
+          <div class="card item-card card-block">
+            <h4 class="item-card-title text-right"></h4>
+            <img class="imgsafety img-fluid" src="https://static.pexels.com/photos/326424/pexels-photo-326424.jpeg"
+              alt="Photo of sunset">
+            <h5 class="card-title  mt-3 mb-3">ProVyuh</h5>
+            <p class="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Use any element to open/show the overlay navigation menu -->
+  <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span> -->
+
+  <div class="container mt-3">
+    <h2 class="text-center"><a role="button" style="font-size:15px;cursor:pointer" onclick="openNav()"
+        class="btn btn-danger text-center btn-xl mb-5">
+        How to use this page
+      </a>
+    </h2>
+
+    <p>
+      <a style="color: black; font-size:150%; text-decoration: none;" href="" class="typewrite" data-period="2000"
+        data-type="We are trying to unite people that have been cut off from society, so we created a website that helps them to be a part of a network that will provide them with first aid and basic goods that can be freely shared from each ones surplus! The goal is to create a healthy solidarity network self-organized by all of us! You can organize activities in your area and inform those around you to take part in this action! This is achieved with the help of a dynamic map where you add your action and the map is updated so that everyone can see where you are and what your action is.">
+        <span class="wrap"></span>
+      </a>
+    </p>
+  </div>
+
+
+
+  <!-- Covid Safety Advice cards END -->
+  <hr>
+  <!-- "Team Design Section with Pure CSS Effect" -->
+  <h2 id="boothead" class="text-center">Our Team</h2>
+  <div class="container">
+    <div class="row">
+
+      <!--person-1-->
+      <div class="col-lg-4">
+        <div class="our-team-main">
+
+          <div class="team-front">
+            <img src="images/social-distancing.png" class="img-fluid" />
+            <h3>Vissarion Zounarakis</h3>
+            <p>Software Developer</p>
+          </div>
+
+          <div class="team-back">
+            <span>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+              Cum sociis
+              natoque penatibus et magnis dis parturient montes,
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+              Cum sociis
+              natoque.
+            </span>
+          </div>
+
+        </div>
+      </div>
+      <!--person-1-->
+
+      <!--person-2-->
+      <div class="col-lg-4">
+        <div class="our-team-main">
+
+          <div class="team-front">
+            <img src="images/Optimized-Mary-sm.jpg" class="img-fluid" />
+            <h3>Maria Tsiligkanou</h3>
+            <p>Web Designer</p>
+          </div>
+
+          <div class="team-back">
+            <span>
+              Maria has acquired an OAED EPAS degree as a computer technician and a vocational degree as a Multimedia
+              Technician. She love computers, drawing and playing games. Finally, she's taking online courses on web
+              development for the last 6 months, as this is what she wants to become her main focus.
+            </span>
+          </div>
+
+        </div>
+      </div>
+      <!--person-2-->
+
+      <!--person-3-->
+      <div class="col-lg-4">
+        <div class="our-team-main">
+
+          <div class="team-front">
+            <img src="http://placehold.it/110x110/607d8b/fff?text=Dilip" class="img-fluid" />
+            <h3>Panos Markopoulos</h3>
+            <p>Web Designer</p>
+          </div>
+
+          <div class="team-back">
+            <span>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+              Cum sociis
+              natoque penatibus et magnis dis parturient montes,
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+              Cum sociis
+              natoque.
+            </span>
+          </div>
+
+        </div>
+      </div>
+      <!--person-3-->
+
+
+
+
+
+    </div>
+  </div>
 
   <!-- HOMEPAGE CONTENT END - MARIA -->
 
-  <footer>
-    <div class="row justify-content-center navbar-dark bg-dark fixed-bottom mt-5" style="color:white;">
+  <footer class="footer">
+    <div class="row justify-content-center navbar-dark bg-dark fixed-bottom p-3">
       <div class="col-auto">
-        <p> &copy; Copyright 2020 co-A-id</p>
+        <p style="font-size:small;"> &copy; Copyright 2020 | Crafted with
+          &hearts; by co<span style="color: red;">&#8704;</span>id team</p>
       </div>
     </div>
   </footer>
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <!-- build:js js/main.js -->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/tether/dist/js/tether.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="js/scripts.js"></script>
+  <!-- endbuild -->
 
 </body>
 

@@ -8,47 +8,57 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <!-- Bootstrap CSS -->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <!-- build:css css/main.css -->
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <link href="css/styles.css" rel="stylesheet">
+  <!-- endbuild -->
 
 </head>
 
 <body>
 
+  <!-- NAVBAR START -->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a href="./index.html"><img src="images/logo.png" height="80" width="80"></a>
 
-    <a class="navbar-brand" href="./index.html"><img src="images/coAid2-circle2.png" height="40" width="54"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="Navbar">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
-            Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="./facts.html"><span class="fa fa-info fa-lg"></span>
-            Facts</a></li>
-        <li class="nav-item"><a class="nav-link" href="./locations.html"><span class="fa fa-map-marker"></span>
-            Locations</a>
-        </li>
-        <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span>
-            Contact - FAQ</a>
-        </li>
-      </ul>
-      <!-- we can use  ml-auto on the span so the login goes right -->
-      <span class="navbar-text">
-        <a data-toggle="modal" data-target="#loginModal">
-          <span class="fa fa-sign-in"></span> Login
-        </a>
-      </span>
+      <div class="collapse navbar-collapse" id="Navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
+              Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./facts.html"><span class="fa fa-info fa-lg"></span>
+              Facts</a></li>
+          <li class="nav-item"><a class="nav-link" href="./locations.html"><span class="fa fa-map-marker"></span>
+              Locations</a>
+          </li>
+          <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span>
+              Contact - FAQ</a>
+          </li>
+        </ul>
+        <!-- Sign Up button-->
+        <span class="navbar-text">
+          <a role="button" class="btn btn-secondary btn-sm mr-1" data-toggle="modal" data-target="#signupModal">
+            <span class="fa fa-user-plus"></span> Sign Up
+          </a>
+        </span>
+        <!-- Sign in button-->
+        <span class="navbar-text">
+          <a role="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#loginModal">
+            <span class="fa fa-sign-in"></span> Sign In
+          </a>
+        </span>
+      </div>
     </div>
   </nav>
-  <br>
-  <br>
+  <!-- <br>
+  <br> -->
   <!--JUMPOTRON-->
-  <header>
+  <!-- <header>
     <div class="top-head left">
       <div class="container">
         <div class="row">
@@ -63,17 +73,34 @@
           </div>
         </div>
       </div>
+    </div> 
+  </header> -->
+  <!-- HEADER START -->
+  <header class="jumbotron" style="margin-bottom: 1px">
+    <div class="container">
+      <div class="row row-header">
+        <div class="col-12 col-sm-6 mt-5">
+          <h1>co<span style="color: red;">&#8704;</span>id</h1>
+          <p>As covid-19 spreads, more and more people are affected by the outcoming crisis not only medically, but also
+            economically and psychologically. This site is providing information about points of interest where
+            vulnerable groups of people can find support during the crisis. Points of interest could be about clothing,
+            feeding, medical checking and other helpful activities targeting people in need.</p>
+        </div>
+        <div class="col-12 col-sm-3 m-auto">
+          <a role="button" class="btn btn-light mt-5" href="./locations.html"><img src="images/joiningHands.jpg"
+              class="img-fluid"><br>Check Active Events</a>
+        </div>
+      </div>
     </div>
-
   </header>
   <!-- CONTACTUS PAGE START - PANAGIOTIS  -->
   <!--breadcrumb-->
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Contact-FAQ</li>
-    </ol>
-  </nav>
+  <!-- <nav aria-label="breadcrumb"> -->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Contact-FAQ</li>
+  </ol>
+  <!-- </nav> -->
   <!--breadcrumb-->
   <!--Main page-->
 
@@ -251,64 +278,60 @@
             </div>
           </div>
         </div>
+        <br><br>
+        <div class="row row-content" width="50%" style="background-color:#e9ecef; color: gray">
+          <div class="col-6">
+            <iframe width="500" height="450" frameborder="1" scrolling="no" marginheight="0" marginwidth="0"
+              margin-left=""
+              src="https://maps.google.com/maps?q=arxipelagous%2041%20petroupoli&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+          </div>
+          <div class="col-6">
+            <form class="form-horizontal" action="" method="post">
+              <fieldset>
+                <legend class="text-center">Contact us</legend>
+
+                <!-- Name input-->
+                <div class="form-group">
+                  <label class="col-md-3 control-label" for="name">Name</label>
+                  <div class="col-md-9">
+                    <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+                  </div>
+                </div>
+
+                <!-- Email input-->
+                <div class="form-group">
+                  <label class="col-md-3 control-label" for="email">Your E-mail</label>
+                  <div class="col-md-9">
+                    <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+                  </div>
+                </div>
+
+                <!-- Message body -->
+                <div class="form-group">
+                  <label class="col-md-3 control-label" for="message">Your message</label>
+                  <div class="col-md-9">
+                    <textarea class="form-control" id="message" name="message"
+                      placeholder="Please enter your message here..." rows="5"></textarea>
+                  </div>
+                </div>
+
+                <!-- Form actions -->
+                <div class="form-group">
+                  <div class="col-md-12 text-right">
+                    <button type="submit" class="btn btn-danger btn-lg">Submit</button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+        </div>
+
       </section>
     </div>
   </div>
-  <!-- .// Accordion -->
+  <!-- .// Accordion and Contact form -->
 
-  <!--Contact with map-->
-  <div class="container">
-    <div class="row row-content">
-
-    </div>
-
-    <div class="row row-content" width="50%" style="background-color: teal;">
-      <div class="col-6">
-        <iframe width="500" height="450" frameborder="1" scrolling="no" marginheight="0" marginwidth="0" margin-left=""
-          src="https://maps.google.com/maps?q=arxipelagous%2041%20petroupoli&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-      </div>
-      <div class="col-6">
-        <form class="form-horizontal" action="" method="post">
-          <fieldset>
-            <legend class="text-center">Contact us</legend>
-
-            <!-- Name input-->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="name">Name</label>
-              <div class="col-md-9">
-                <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
-              </div>
-            </div>
-
-            <!-- Email input-->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="email">Your E-mail</label>
-              <div class="col-md-9">
-                <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
-              </div>
-            </div>
-
-            <!-- Message body -->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="message">Your message</label>
-              <div class="col-md-9">
-                <textarea class="form-control" id="message" name="message"
-                  placeholder="Please enter your message here..." rows="5"></textarea>
-              </div>
-            </div>
-
-            <!-- Form actions -->
-            <div class="form-group">
-              <div class="col-md-12 text-right">
-                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-              </div>
-            </div>
-          </fieldset>
-        </form>
-      </div>
-
-    </div>
-  </div>
 
   <!-- CONTACTUS PAGE END - PANAGIOTIS  -->
   <br>
@@ -322,13 +345,15 @@
   </footer>
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- build:js js/main.js -->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/tether/dist/js/tether.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/scripts.js"></script>
+  <!-- endbuild -->
 </body>
 
 </html>
