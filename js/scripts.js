@@ -262,6 +262,7 @@ function addMarker(coords) {
 
   //fill the info window from user input (add event modal)
   var eventName = document.getElementById("eventName").value;
+  var eventAddress = document.getElementById("eventAddress").value;
   var eventDate = document.getElementById("eventDate").value;
   var eventDescription = document.getElementById("eventDescription").value;
   var contentInfo = '';
@@ -274,7 +275,7 @@ function addMarker(coords) {
   });
 
   contentInfo = "<h5>" + eventName + "</h5><br>" +
-    "<div><strong>" + marker.getPosition() + "</strong></div><br>" +
+    "<div><strong>" + eventAddress + "</strong></div><br>" +
     "<div style='font-size:16px'><strong>Day: </strong>" + eventDate + "<div><br>" +
     "<div style='font-size:16px'><strong>Info: </strong>" + eventDescription + "<div><br>" +
     "<a href='./contactus.html' target='_blank' style='font-size:16px'>Ask for help!</a><br><br>" +
