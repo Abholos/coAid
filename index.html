@@ -74,7 +74,7 @@
                 <input type="email" class="form-control form-control-sm mr-1" id="logEmail" placeholder="" required><span id="mailInfo" ></span>
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group required">
               <label class="" for="logPassword">
                 Password
               </label>
@@ -109,17 +109,17 @@
         </div>
         <div class="modal-body">
           <form class="">
-            <div class="form-group">
+            <div class="form-group required">
               <label class="" for="signEmail">Email
                 address
               </label>
               <input type="email" class="form-control form-control-sm mr-1" id="signEmail" placeholder="Email address" required><span id="signMailInfo" ></span>
             </div>
-            <div class="form-group">
+            <div class="form-group required">
               <label class="" for="signPassword">
                 Password
               </label>
-              <input type="password" class="form-control form-control-sm mr-1" id="signPassword" placeholder="Password" minlength="6"><span id="signPassInfo" ></span>
+              <input type="password" class="form-control form-control-sm mr-1" id="signPassword" placeholder="Password" minlength="6" required><span id="signPassInfo" ></span>
             </div>
           </form>
         </div>
@@ -456,6 +456,53 @@
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="js/scripts.js"></script>
   <!-- endbuild -->
+
+  <!-- SIGN IN / SIGN UP FORM VALIDATION SCRIPT -->
+  <script>
+    var emailLogIn = document.getElementById("logEmail");
+    emailLogIn.oninput = function () {
+      if (!this.validity.valid) {
+        emailLogIn.style.border = "3px solid red";
+        mailInfo.innerHTML = "<em style='color:red'>Invalid email format</em>";
+      } else {
+        emailLogIn.style.border = "1px solid gray";
+        mailInfo.style.display = "none";
+      }
+    }
+
+    var passLogIn = document.getElementById("logPassword");
+    passLogIn.oninput = function () {
+      if (!this.validity.valid) {
+        passLogIn.style.border = "3px solid red";
+        passInfo.innerHTML = "<em style='color:red'>Password must be over 6 chars</em>";
+      } else {
+        passLogIn.style.border = "1px solid gray";
+        passInfo.style.display = "none";
+      }
+    }
+
+    var emailSign = document.getElementById("signEmail");
+    emailSign.oninput = function () {
+      if (!this.validity.valid) {
+        emailSign.style.border = "3px solid red";
+        signMailInfo.innerHTML = "<em style='color:red'>Invalid email format</em>";
+      } else {
+        emailSign.style.border = "1px solid gray";
+        signMailInfo.style.display = "none";
+      }
+    }
+
+    var passSign = document.getElementById("signPassword");
+    passSign.oninput = function () {
+      if (!this.validity.valid) {
+        passSign.style.border = "3px solid red";
+        signPassInfo.innerHTML = "<em style='color:red'>Password must be over 6 chars</em>";
+      } else {
+        passSign.style.border = "1px solid gray";
+        signPassInfo.style.display = "none";
+      }
+    }
+  </script>
 
 </body>
 

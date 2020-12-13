@@ -1,49 +1,3 @@
-var emailLogIn = document.getElementById("logEmail");
-emailLogIn.oninput = function () {
-  if (!this.validity.valid) {
-    emailLogIn.style.border = "3px solid red";
-    mailInfo.innerHTML = "<em style='color:red'>Invalid email format</em>";
-  } else {
-    emailLogIn.style.border = "1px solid gray";
-    mailInfo.style.display = "none";
-  }
-}
-
-var passLogIn = document.getElementById("logPassword");
-passLogIn.oninput = function () {
-  if (!this.validity.valid) {
-    passLogIn.style.border = "3px solid red";
-    passInfo.innerHTML = "<em style='color:red'>Password must be over 6 chars</em>";
-  } else {
-    passLogIn.style.border = "1px solid gray";
-    passInfo.style.display = "none";
-  }
-}
-
-var emailSign = document.getElementById("signEmail");
-emailSign.oninput = function () {
-  if (!this.validity.valid) {
-    emailSign.style.border = "3px solid red";
-    signMailInfo.innerHTML = "<em style='color:red'>Invalid email format</em>";
-  } else {
-    emailSign.style.border = "1px solid gray";
-    signMailInfo.style.display = "none";
-  }
-}
-
-var passSign = document.getElementById("signPassword");
-passSign.oninput = function () {
-  if (!this.validity.valid) {
-    passSign.style.border = "3px solid red";
-    signPassInfo.innerHTML = "<em style='color:red'>Password must be over 6 chars</em>";
-  } else {
-    passSign.style.border = "1px solid gray";
-    signPassInfo.style.display = "none";
-  }
-}
-
-
-
 //MAP SCRIPT variables - Vissarion start
 var geocoder;
 var map;
@@ -349,6 +303,8 @@ function addMarker(coords) {
 
 }
 
+
+
 function donation() {
   var radiosField = document.getElementById("rField");
   var myRadioNo = document.getElementById("radioNo");
@@ -408,6 +364,7 @@ function eblDblAddEventBtn(element) {
 
 
 // FORM VALIDATION
+
 var eventNameMod = document.getElementById("eventName");
 eventNameMod.oninput = function () {
   if (!this.validity.valid) {
