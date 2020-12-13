@@ -55,6 +55,84 @@
       </div>
     </div>
   </nav>
+  <!-- NAVBAR END -->
+
+  <!--Login Modal content-->
+  <div id="loginModal" class="modal fade mt-5" role="dialog">
+    <div class="modal-dialog modal-md" role="content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Sign In </h4>
+          <button type="button" class="close" data-dismiss="modal">&times</button>
+        </div>
+        <div class="modal-body">
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="logEmail">Email
+                address
+              </label>
+              <input type="email" class="form-control form-control-sm mr-1" id="logEmail" placeholder="Email address">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="logPassword">
+                Password
+              </label>
+              <input type="password" class="form-control form-control-sm mr-1" id="logPassword" placeholder="Password">
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox">
+                Remember me
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Cancel
+          </button>
+          <button type="submit" class="btn btn-danger btn-sm">
+            Sign in
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Sign Up Modal content-->
+  <div id="signupModal" class="modal fade mt-5" role="dialog">
+    <div class="modal-dialog modal-md" role="content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Sign Up </h4>
+          <button type="button" class="close" data-dismiss="modal">&times</button>
+        </div>
+        <div class="modal-body">
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="signEmail">Email
+                address
+              </label>
+              <input type="email" class="form-control form-control-sm mr-1" id="signEmail" placeholder="Email address">
+
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="signPassword">
+                Password
+              </label>
+              <input type="password" class="form-control form-control-sm mr-1" id="signPassword" placeholder="Password">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Cancel
+          </button>
+          <button type="submit" class="btn btn-danger btn-sm">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- <br>
   <br> -->
   <!--JUMPOTRON-->
@@ -76,23 +154,25 @@
     </div> 
   </header> -->
   <!-- HEADER START -->
-  <header class="jumbotron" style="margin-bottom: 1px">
-    <div class="container">
+  <header class="jumbotron" style="margin-bottom: 1px;">
+    <div style="margin-top:5%;" class="container">
       <div class="row row-header">
-        <div class="col-12 col-sm-6 mt-5">
+        <div class="col-12 col-sm-6">
           <h1>co<span style="color: red;">&#8704;</span>id</h1>
-          <p>As covid-19 spreads, more and more people are affected by the outcoming crisis not only medically, but also
+          <p style="font-size:100%">As covid-19 spreads, more and more people are affected by the outcoming crisis not
+            only medically, but also
             economically and psychologically. This site is providing information about points of interest where
             vulnerable groups of people can find support during the crisis. Points of interest could be about clothing,
             feeding, medical checking and other helpful activities targeting people in need.</p>
         </div>
-        <div class="col-12 col-sm-3 m-auto">
-          <a role="button" class="btn btn-light mt-5" href="./locations.html"><img src="images/joiningHands.jpg"
+        <div class="col-12 col-sm-3 m-auto" style="z-index: 1;">
+          <a role="button" class="btn btn-light" href="./locations.html"> <img src="images/joiningHands.jpg"
               class="img-fluid"><br>Check Active Events</a>
         </div>
       </div>
     </div>
   </header>
+  <!-- HEADER END -->
   <!-- CONTACTUS PAGE START - PANAGIOTIS  -->
   <!--breadcrumb-->
   <!-- <nav aria-label="breadcrumb"> -->
@@ -118,9 +198,10 @@
               <div class="card">
                 <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
-                    <button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse"
-                      data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      <i class="fa fa-amazon main"></i><i class="fa fa-angle-double-right mr-3"></i>Can i get Covid-19
+                    <button class="btn btn-link collapsed btn-block text-left text-wrap" type="button"
+                      data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+                      aria-controls="collapseOne">
+                      <i class="fa fa-plus main"></i><i class="fa fa-angle-double-right"></i>Can i get Covid-19
                       from food?
                     </button>
                   </h5>
@@ -146,9 +227,10 @@
               <div class="card">
                 <div class="card-header" id="headingTwo">
                   <h5 class="mb-0">
-                    <button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse"
-                      data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      <i class="fa fa-plus main"></i><i class="fa fa-angle-double-right mr-3"></i>How many guests can
+                    <button class="btn btn-link collapsed btn-block text-left text-wrap" type="button"
+                      data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                      aria-controls="collapseTwo">
+                      <i class="fa fa-plus main"></i><i class="fa fa-angle-double-right"></i>How many guests can
                       safely attend in an event?
                     </button>
                   </h5>
@@ -175,9 +257,10 @@
               <div class="card">
                 <div class="card-header" id="headingThree">
                   <h5 class="mb-0">
-                    <button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse"
-                      data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      <i class="fa fa-expeditedssl main"></i><i class="fa fa-angle-double-right mr-3"></i>What actions
+                    <button class="btn btn-link collapsed btn-block text-left text-wrap" type="button"
+                      data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                      aria-controls="collapseThree">
+                      <i class="fa fa-plus main"></i><i class="fa fa-angle-double-right"></i>What actions
                       can staff and attendees during an event take to prevent the spread of COVID-19?
                     </button>
                   </h5>
@@ -203,10 +286,11 @@
               <div class="card">
                 <div class="card-header" id="headingFour">
                   <h5 class="mb-0">
-                    <button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse"
-                      data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      <i class="fa fa-envelope main"></i><i class="fa fa-angle-double-right mr-3"></i>How should staff
-                      clean the facility before and during the event to
+                    <button class="btn btn-link collapsed btn-block text-left text-wrap" type="button"
+                      data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                      aria-controls="collapseFour">
+                      <i class="fa fa-plus main"></i><i class="fa fa-angle-double-right"></i>How should staff clean the
+                      facility before and during the event to
                       limit spread of the virus?
                     </button>
                   </h5>
@@ -239,9 +323,10 @@
               <div class=" card">
                 <div class="card-header" id="headingFive">
                   <h5 class="mb-0">
-                    <button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse"
-                      data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                      <i class="fa fa-envelope main"></i><i class="fa fa-angle-double-right mr-3"></i>What are
+                    <button class="btn btn-link collapsed btn-block text-left text-wrap" type="button"
+                      data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+                      aria-controls="collapseFive">
+                      <i class="fa fa-plus main"></i><i class="fa fa-angle-double-right"></i>What are
                       things to
                       consider when determining if an event needs to be postponed or canceled?
                     </button>
@@ -279,13 +364,13 @@
           </div>
         </div>
         <br><br>
-        <div class="row row-content" width="50%" style="background-color:#e9ecef; color: gray">
-          <div class="col-6">
+        <div class="row row-content" width="50%" style="background-color:#e9ecef; color: gray;">
+          <div class="col-md-12 col-lg-6 embed-responsive embed-responsive-1by1">
             <iframe width="500" height="450" frameborder="1" scrolling="no" marginheight="0" marginwidth="0"
               margin-left=""
               src="https://maps.google.com/maps?q=arxipelagous%2041%20petroupoli&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
           </div>
-          <div class="col-6">
+          <div class="col-md-12 col-lg-6">
             <form class="form-horizontal" action="" method="post">
               <fieldset>
                 <legend class="text-center">Contact us</legend>
@@ -337,9 +422,10 @@
   <br>
   <br>
   <footer class="footer">
-    <div class="row justify-content-center navbar-dark bg-dark fixed-bottom" style="color:white;">
+    <div class="row justify-content-center navbar-dark bg-dark fixed-bottom p-3">
       <div class="col-auto">
-        <p> &copy; Copyright 2020 co-A-id</p>
+        <p> &copy; Copyright 2020 | Crafted with
+          &hearts; by co<span style="color: red;">&#8704;</span>id team</p>
       </div>
     </div>
   </footer>

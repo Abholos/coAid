@@ -1,8 +1,4 @@
 /* PANOS START */
-@import url("https://fonts.googleapis.com/css?family=Tajawal");
-@import url("https://fonts.googleapis.com/css?family=Tajawal");
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-
 section {
   padding: 60px 0;
 }
@@ -54,13 +50,6 @@ html.cdc-2020 .accordion .card-header:hover {
   border-top: 1px solid #bdbdbd;
 }
 
-@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
-
-/* body {
-  color: #5a5a5a;
-  font-family: "Open Sans", Arial, sans-serif;
-  font-size: 15px;
-} */
 h1,
 h2,
 h3,
@@ -456,19 +445,20 @@ header {
 
 /* PANOS END */
 
+/* ############################################### */
 
 /* MARIA START */
 
-  #Navbar li.active a {
-    color: orangered;
-  }
+#Navbar li.active a {
+  color: orangered;
+}
 
 #Navbar .nav-link:hover {
   color: red;
 }
 /* Carousel */
 /* Indicators color */
-li.colindic{ 
+li.colindic {
   background-color: rgb(189, 178, 178);
 }
 .txtshadowhite {
@@ -485,7 +475,8 @@ hr {
   border-radius: 20px;
   width: 60%;
 }
-hr:before { /* Not really supposed to work, but does */
+hr:before {
+  /* Not really supposed to work, but does */
   display: block;
   content: "";
   height: 30px;
@@ -494,63 +485,44 @@ hr:before { /* Not really supposed to work, but does */
   border-color: lightgray;
   border-width: 0 0 1px 0;
   border-radius: 20px;
-  
 }
-
-
-/* text event */
-
-/* text event */
 
 /* SAFETY ADVICE */
 
-.imgsafety{
-  height:250px;
-  width:100%;
+.imgsafety {
+  height: 250px;
+  width: 100%;
 }
-.item{
-  padding-left:5px;
-  padding-right:5px;  
+.item {
+  padding-left: 5px;
+  padding-right: 5px;
 }
-.item-card{
+.item-card {
   border-radius: 5%;
-  transition:0.5s;
-  cursor:pointer;
+  transition: 0.5s;
+  cursor: pointer;
   background-color: #e0e7f1;
 }
-/* .item-card-title{  
-  font-size:15px;
-  transition:1s;
-  cursor:pointer;
-} */
-/* .item-card-title i{  
-  font-size:15px;
-  transition:1s;
-  cursor:pointer;
-  color:#ffa710
-} */
-/* .card-title i:hover{
-  transform: scale(1.25) rotate(100deg); 
-  color:#18d4ca;
-  } */
-.card:hover{
+
+.card:hover {
   transform: scale(1.03);
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
-.card-text{
-  height:150px;  
+.card-text {
+  height: 150px;
 }
 
-.card::before, .card::after {
+.card::before,
+.card::after {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   transform: scale3d(0, 0, 1);
-  transition: transform .3s ease-out 0s;
+  transition: transform 0.3s ease-out 0s;
   background: rgba(255, 255, 255, 0.1);
-  content: '';
+  content: "";
   pointer-events: none;
 }
 .card::before {
@@ -559,102 +531,97 @@ hr:before { /* Not really supposed to work, but does */
 .card::after {
   transform-origin: right bottom;
 }
-.card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+.card:hover::before,
+.card:hover::after,
+.card:focus::before,
+.card:focus::after {
   transform: scale3d(1, 1, 1);
 }
 /* SAFETY ADVICE */
 
 /* Our team */
-#boothead
-{
-	color: black;
-	margin:40px 0 60px 0;
-  font-weight:300;
-  
+#boothead {
+  color: black;
+  margin: 40px 0 60px 0;
+  font-weight: 300;
 }
-.our-team-main
-{
-	width:100%;
-	height:auto;
-	border-bottom:5px #323233 solid;
-	background:#fff;
-	text-align:center;
-	border-radius:10px;
-	overflow:hidden;
-	position:relative;
-	transition:0.5s;
-	margin-bottom:28px;
+.our-team-main {
+  width: 100%;
+  height: auto;
+  border-bottom: 5px #323233 solid;
+  background: #fff;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s;
+  margin-bottom: 28px;
 }
-.our-team-main img
-{
-	border-radius:50%;
-	margin-bottom:20px;
-	width: 90px;
+.our-team-main img {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  width: 90px;
 }
 
-.our-team-main h3
-{
-	font-size:20px;
-	font-weight:700;
+.our-team-main h3 {
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.our-team-main p
-{
-	margin-bottom:0;
+.our-team-main p {
+  margin-bottom: 0;
 }
 
-.team-back
-{
-	width:100%;
-	height:auto;
-	position:absolute;
-	top:0;
-	left:0;
-	padding:5px 15px 0 15px;
-	text-align:left;
-	background:#fff;
-	
+.team-back {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 15px 0 15px;
+  text-align: left;
+  background: #fff;
 }
 
-.team-front
-{
-	width:100%;
-	height:auto;
-	position:relative;
-	z-index:10;
-	background:#fff;
-	padding:15px;
-	bottom:0px;
-	transition: all 0.5s ease;
+.team-front {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 10;
+  background: #fff;
+  padding: 15px;
+  bottom: 0px;
+  transition: all 0.5s ease;
 }
-.our-team-main:hover .team-front
-{
-	bottom:-200px;
-	transition: all 0.5s ease;
+.our-team-main:hover .team-front {
+  bottom: -200px;
+  transition: all 0.5s ease;
 }
 
-.our-team-main:hover
-{
-	border-color:#777;
-	transition:0.5s;
+.our-team-main:hover {
+  border-color: #777;
+  transition: 0.5s;
 }
 /* Our team */
 .footer {
   color: white;
+  margin-top: 2em;
 }
 
-
- /* The Overlay (background) */
- .overlay {
-  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+.footer p {
+  font-size:small;
+}
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
   height: 100%;
   width: 0;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  background-color: rgb(0,0,0); /* Black fallback color */
-  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  background-color: rgb(0, 0, 0); /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
@@ -679,7 +646,8 @@ hr:before { /* Not really supposed to work, but does */
 }
 
 /* When you mouse over the navigation links, change their color */
-.overlay a:hover, .overlay a:focus {
+.overlay a:hover,
+.overlay a:focus {
   color: #f1f1f1;
 }
 
@@ -693,11 +661,54 @@ hr:before { /* Not really supposed to work, but does */
 
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
+  .overlay a {
+    font-size: 20px;
+  }
   .overlay .closebtn {
     font-size: 40px;
     top: 15px;
     right: 35px;
   }
-} 
+}
+/* Overlay */
+
 /* MARIA END */
+
+.social-box .box {
+  /* background: #fff; */
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.social-box .box:hover {
+  box-shadow: 0 0 6px #ffffff;
+}
+
+.social-box .box .box-text {
+  /* margin: 20px 0px; */
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.social-box .box .box-btn a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.box-text {
+  color: white;
+}
+
+/* FORM VALIDATION */
+.required label:after {
+  content: "*";
+}
+
+.required h4:after {
+  content: "*";
+}
+

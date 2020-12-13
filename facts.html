@@ -22,11 +22,9 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
       <a href="./index.html"><img src="images/logo.png" height="80" width="80"></a>
-
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="Navbar">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
@@ -56,40 +54,117 @@
       </div>
     </div>
   </nav>
+  <!-- NAVBAR END -->
 
-  <header class="jumbotron" style="margin-bottom: 1px">
-    <div class="container">
+  <!--Login Modal content-->
+  <div id="loginModal" class="modal fade mt-5" role="dialog">
+    <div class="modal-dialog modal-md" role="content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Sign In </h4>
+          <button type="button" class="close" data-dismiss="modal">&times</button>
+        </div>
+        <div class="modal-body">
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="logEmail">Email
+                address
+              </label>
+              <input type="email" class="form-control form-control-sm mr-1" id="logEmail" placeholder="Email address">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="logPassword">
+                Password
+              </label>
+              <input type="password" class="form-control form-control-sm mr-1" id="logPassword" placeholder="Password">
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox">
+                Remember me
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Cancel
+          </button>
+          <button type="submit" class="btn btn-danger btn-sm">
+            Sign in
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Sign Up Modal content-->
+  <div id="signupModal" class="modal fade mt-5" role="dialog">
+    <div class="modal-dialog modal-md" role="content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Sign Up </h4>
+          <button type="button" class="close" data-dismiss="modal">&times</button>
+        </div>
+        <div class="modal-body">
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="signEmail">Email
+                address
+              </label>
+              <input type="email" class="form-control form-control-sm mr-1" id="signEmail" placeholder="Email address">
+
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="signPassword">
+                Password
+              </label>
+              <input type="password" class="form-control form-control-sm mr-1" id="signPassword" placeholder="Password">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Cancel
+          </button>
+          <button type="submit" class="btn btn-danger btn-sm">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- HEADER START -->
+  <header class="jumbotron" style="margin-bottom: 1px;">
+    <div style="margin-top: 5%;" class="container">
       <div class="row row-header">
-        <div class="col-12 col-sm-6 mt-5">
+        <div class="col-12 col-sm-6">
           <h1>co<span style="color: red;">&#8704;</span>id</h1>
-          <p>As covid-19 spreads, more and more people are affected by the outcoming crisis not only medically, but also
+          <p style="font-size:100%">As covid-19 spreads, more and more people are affected by the outcoming crisis not
+            only medically, but also
             economically and psychologically. This site is providing information about points of interest where
             vulnerable groups of people can find support during the crisis. Points of interest could be about clothing,
             feeding, medical checking and other helpful activities targeting people in need.</p>
         </div>
-        <div class="col-12 col-sm-3 m-auto">
-          <a role="button" class="btn btn-light mt-5" href="./locations.html"><img src="images/joiningHands.jpg"
+        <div class="col-12 col-sm-3 m-auto" style="z-index: 1;">
+          <a role="button" class="btn btn-light" href="./locations.html"><img src="images/joiningHands.jpg"
               class="img-fluid"><br>Check Active Events</a>
         </div>
       </div>
     </div>
   </header>
+  <!-- HEADER END -->
+
   <!-- CONTACTUS PAGE START - PANAGIOTIS  -->
-  <!--breadcrumb-->
-  <!-- <nav aria-label="breadcrumb"> -->
+  <!--breadcrumb start-->
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page">Contact-FAQ</li>
   </ol>
-  <!-- </nav> -->
-  <!--breadcrumb-->
+  <!--breadcrumb end-->
+
   <section class="top-nav">
     <div class="container navbar-expand-lg">
-      <!-- <div class="collapse navbar-collapse" id="exCollapsingNavbar2"> -->
       <h3>Articles</h3>
-      <!-- </div> -->
     </div>
-    <!-- </nav> -->
   </section>
   <section class="banner-sec">
     <div class="container">
@@ -153,7 +228,7 @@
             </ol>
 
             <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
+            <div class="carousel-inner cInner" role="listbox">
               <div class="carousel-item active">
                 <div class="news-block">
                   <div class="news-media"><img class="img-fluid" src="#" alt=""></div>
@@ -361,10 +436,11 @@
 
 
 
-  <footer>
-    <div class="row justify-content-center navbar-dark bg-dark fixed-bottom" style="color:white;">
+  <footer class="footer">
+    <div class="row justify-content-center navbar-dark bg-dark fixed-bottom p-3">
       <div class="col-auto">
-        <p> &copy; Copyright 2020 co-A-id</p>
+        <p> &copy; Copyright 2020 | Crafted with
+          &hearts; by co<span style="color: red;">&#8704;</span>id team</p>
       </div>
     </div>
   </footer>

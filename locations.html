@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="icon" href="./images/logo.png">
   <title>Co-A-id</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,20 +17,14 @@
   <style>
     html,
     body {
-
       height: 100%;
       margin: 0;
       padding: 0;
     }
 
     #map {
-      /* margin-top: 3%; */
       height: 70%;
     }
-
-    /* .breadcrumb{
-      margin-top: 5%;
-    } */
   </style>
 </head>
 
@@ -61,7 +56,7 @@
         <!-- Sign Up button-->
         <span class="navbar-text">
           <a role="button" class="btn btn-secondary btn-sm mr-1" data-toggle="modal" data-target="#signupModal">
-            <span class="fa fa-user-plus"></span> Sign Up
+            <span class="fa -plus"></span> Sign Up
           </a>
         </span>
         <!-- Sign in button-->
@@ -73,32 +68,109 @@
       </div>
     </div>
   </nav><br><br><br><br>
+  <!-- NAVBAR END -->
 
-  <!--breadcrumb-->
 
+  <!--Login Modal content-->
+  <div id="loginModal" class="modal fade mt-5" role="dialog">
+    <div class="modal-dialog modal-md" role="content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Sign In </h4>
+          <button type="button" class="close" data-dismiss="modal">&times</button>
+        </div>
+        <div class="modal-body">
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="logEmail">Email
+                address
+              </label>
+              <input type="email" class="form-control form-control-sm mr-1" id="logEmail" placeholder="Email address">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="logPassword">
+                Password
+              </label>
+              <input type="password" class="form-control form-control-sm mr-1" id="logPassword" placeholder="Password">
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox">
+                Remember me
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Cancel
+          </button>
+          <button type="submit" class="btn btn-danger btn-sm">
+            Sign in
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Sign Up Modal content-->
+  <div id="signupModal" class="modal fade mt-5" role="dialog">
+    <div class="modal-dialog modal-md" role="content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Sign Up </h4>
+          <button type="button" class="close" data-dismiss="modal">&times</button>
+        </div>
+        <div class="modal-body">
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="signEmail">Email
+                address
+              </label>
+              <input type="email" class="form-control form-control-sm mr-1" id="signEmail" placeholder="Email address">
+
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="signPassword">
+                Password
+              </label>
+              <input type="password" class="form-control form-control-sm mr-1" id="signPassword" placeholder="Password">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Cancel
+          </button>
+          <button type="submit" class="btn btn-danger btn-sm">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--breadcrumb start-->
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page">Locations</li>
   </ol>
-
-  <!--breadcrumb-->
-
-
+  <!--breadcrumb end-->
 
   <!-- LOCATIONS PAGE START - ARIS&MARIA -->
+  <div id="style-selector-control" class="map-control">
+    <select id="style-selector" class="selector-control">
+      <option value="default">Default</option>
+      <option value="night">Night mode</option>
+    </select>
+  </div>
+
   <div id="map"></div>
-
-
 
   <!-- ADD EVENT BUTTON -->
   <div class="container" style="margin-top:20px;">
-    <input id="addEventID" type="button" class="btn btn-block btn-info" value="ADD NEW EVENT" data-toggle="modal"
-      data-target="#modalAddShelterForm" style="padding: 10px; font-size:16px; font-weight:bold">
+    <input id="addEventID" type="button" class="btn btn-block" value="ADD NEW EVENT" data-toggle="modal"
+      data-target="#modalAddShelterForm"
+      style="padding: 10px; font-size:16px; font-weight:bold; background-color:#242f3e; color:rgb(255, 145, 0)">
   </div>
-
-  <!-- Add event button listener -->
-  <script>
-  </script>
 
   <!-- ADD EVENT MODAL -->
   <div class="modal fade" id="modalAddShelterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -106,72 +178,90 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">ADD Shelter-Event</h4>
+          <h4 class="modal-title w-100 font-weight-bold">ADD EVENT</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body mx-3">
-          <div class="form-group row">
-            <i class="fas fa-user prefix grey-text"></i>
-            <input type="text" id="eventName" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="eventName">Event name</label>
+          <div class="form-group row required">
+            <i class=" prefix grey-text"></i>
+            <input type="text" id="eventName" class="form-control validate required" placeholder="Food offering"
+              autofocus="autofocus" minlength="4" required>
+            <label data-error="wrong" data-success="right" for="eventName">Event name</label><span id="eventNameInfo"
+              style="color: red"></span>
           </div>
 
-          <div class="form-group row">
-            <i class="fas fa-user prefix grey-text"></i>
+          <!-- <div class="form-group row">
+            <i class=" prefix grey-text"></i>
             <input type="number" step="any" id="eventLat" class="form-control validate">
             <label data-error="wrong" data-success="right" for="eventLat">Location latitude</label>
           </div>
 
           <div class="form-group row">
-            <i class="fas fa-user prefix grey-text"></i>
+            <i class=" prefix grey-text"></i>
             <input type="number" step="any" id="eventLong" class="form-control validate">
             <label data-error="wrong" data-success="right" for="eventLong">Location longitude</label>
-          </div>
+          </div> -->
 
-          <div class="form-group row">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <input type="date" id="eventDate" class="form-control validate">
+          <!-- FIELDS TO GEOCODE START-->
+          <div class="form-group row required">
+            <i class=" prefix grey-text"></i>
+            <input type="text" id="eventAddress" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="eventName">Full address and city, <em>eg: (Karaiskaki
+                17, Athina 105 54)</em></label>
+          </div>
+          <!-- FIELDS TO GEOCODE END-->
+
+          <div class="form-group row required">
+            <i class=" prefix grey-text"></i>
+            <input type="date" id="eventDate" class="form-control validate required" required>
             <label data-error="wrong" data-success="right" for="eventDate">Date</label>
           </div>
 
-          <div class="form-group row">
-            <i class="fas fa-pencil prefix grey-text"></i>
-            <textarea type="text" id="eventDescription" class="md-textarea form-control" rows="4"></textarea>
+          <div class="form-group row required">
+            <i class=" prefix grey-text"></i>
+            <textarea type="text" id="eventDescription" class="md-textarea form-control required" rows="4"
+              minlength="20" required></textarea>
             <label data-error="wrong" data-success="right" for="eventDescription">Event Description</label>
           </div>
 
-          <div class="form-group row">
-            <fieldset id="rField" style="border:none; margin:0px; padding:0">
-              <h4 class="w-100 font-weight-bold">Open a Donation Campaign</h4>
-              <input type="radio" id="radioNo" name="radioX" value="No" />
-              <label for="radioNo">No</label><br>
-              <input type="radio" id="radioYes" name="radioX" value="Yes" checked />
-              <label for="radioYes">Yes</label>
-            </fieldset>
-          </div>
-
-          <!-- content visible IF yes selected -->
-          <div id="donationID">
+          <div style="border: 0.1px solid lightgray; border-radius:1%">
             <div class="form-group row">
-              <i class="fas fa-user prefix grey-text"></i>
-              <input type="text" id="accountName" class="form-control validate">
-              <label data-error="wrong" data-success="right" for="accountName">Account Name</label>
+              <fieldset id="rField" style="border:none; margin:0px; padding:0; margin-left: 5%;">
+                <div class="required">
+                  <h4 class="w-100 font-weight-bold">Open a Donation Campaign</h4>
+                </div>
+                <input type="radio" id="radioNo" name="radioX" value="No" />
+                <label for="radioNo">No</label><br>
+                <input type="radio" id="radioYes" name="radioX" value="Yes" checked />
+                <label for="radioYes">Yes</label>
+              </fieldset>
             </div>
 
-            <div class="form-group row">
-              <i class="fas fa-user prefix grey-text"></i>
-              <input type="number" id="iban" class="form-control validate">
-              <label data-error="wrong" data-success="right" for="iban">IBAN</label>
+            <!-- content visible IF yes selected -->
+            <div id="donationID">
+              <div class="required" style="margin:6px">
+                <i class=" prefix grey-text"></i>
+                <input type="text" id="accountName" class="form-control validate required" minlength="4" required>
+                <label data-error="wrong" data-success="right" for="accountName">Account Name</label>
+              </div>
+
+              <div class="required" style="margin:6px">
+                <i class=" prefix grey-text"></i>
+                <input type="any" id="iban" class="form-control validate required" minlength="4" required>
+                <label data-error="wrong" data-success="right" for="iban">IBAN</label>
+              </div>
             </div>
           </div>
+
+
 
 
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <button id="addEventModalID" class="btn btn-primary" data-dismiss="modal">ADD Event <i
-              class="fas fa-paper-plane-o ml-1"></i></button>
+          <button id="addEventModalID" class="btn btn-danger" data-dismiss="modal">ADD Event <i
+              class="ml-1"></i></button>
         </div>
       </div>
     </div>
@@ -229,10 +319,7 @@
               </div>
             </div>
 
-
-
             <a class="badge badge-success">Your Donation is very importand</a>
-
 
             <label class="col col-sm">Account name</label>
             <div class="input-group col-12 col-sm-4">
@@ -253,7 +340,7 @@
         </div>
         <div class="modal-footer">
           <button class="btn btn-default btn-sm" type="cancel" data-dismiss="modal">Cancel</button>
-          <button class="btn btn-default btn-primary" type="submit">Submit</button>
+          <button class="btn btn-default btn-danger" type="submit">Submit</button>
         </div>
       </div>
     </div>
@@ -261,124 +348,14 @@
 
 
   <!-- LOCATIONS PAGE END - ARIS&MARIA -->
-
   <footer class="footer">
-    <div class="row justify-content-center navbar-dark bg-dark fixed-bottom"
-      style=" margin-top:3.5%; padding:10px 0 10px 0;">
+    <div class="row justify-content-center navbar-dark bg-dark fixed-bottom p-3">
       <div class="col-auto">
-        <p> &copy; Copyright 2020 co-A-id</p>
+        <p> &copy; Copyright 2020 | Crafted with
+          &hearts; by co<span style="color: red;">&#8704;</span>id team</p>
       </div>
     </div>
   </footer>
-
-  <!-- MAP EMBED -->
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyKBM2dqKGmOVKbm30ZpvNamBQbDdWAZk&callback=initMap">
-    </script>
-
-  <!-- MAP SCRIPT FULL -->
-  <script>
-    var map;
-    function initMap() {
-      //Contructor creates a new map - only center and zoom required
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 37.96639, lng: 23.73513 },
-        zoom: 13
-      });
-
-      //Test marker
-      var acropolis = { lat: 37.97157, lng: 23.72582 };
-      var marker = new google.maps.Marker({
-        position: acropolis,
-        map: map,
-        title: "Acropolis - Test Marker"
-      });
-
-      //Array of markers
-      var markers = [
-        { lat: 38.00335152618623, lng: 23.74245093801985 },
-        { lat: 38.02189450633734, lng: 23.747306768389443 },
-      ];
-
-      //iterate markers array
-      for (var i = 0; i < markers.length; i++) {
-        addMarker(markers[i]);
-      }
-
-      //Add marker function
-      function addMarker(coords, contentInfo) {
-
-        var marker = new google.maps.Marker({
-          position: coords,
-          content: contentInfo,
-          map: map,
-          icon: '/images/pinicored2.png'
-
-        });
-
-        var infowindow = new google.maps.InfoWindow({
-          content: contentInfo
-        });
-
-        //marker listener
-        marker.addListener("click", function () {
-          infowindow.open(map, marker);
-        });
-
-        //ADD NEW MARKER Functionality
-        var addEvent = document.getElementById("addEventModalID");
-
-        console.log(infowindow);
-        addEvent.onclick = function () {
-          var latitude = document.getElementById("eventLat").value;
-          var longtitude = document.getElementById("eventLong").value;
-
-          //adds the coords to the markers array
-          markers.push({ lat: parseFloat(latitude), lng: parseFloat(longtitude) });
-
-          //fill the info window from user input (add event modal)
-          var eventName = document.getElementById("eventName").value;
-          var eventDate = document.getElementById("eventDate").value;
-          var eventDescription = document.getElementById("eventDescription").value;
-          var donate = document.getElementById("radioYes");
-          var donateNo = document.getElementById("radioNo");
-
-          contentInfo = "<h5>" + eventName + "</h5><br>" +
-            "<div><strong>" + marker.getPosition() + "</strong></div><br>" +
-            "<div>Day:" + eventDate + "<div><br>" +
-            "<div>Info:" + eventDescription + "<div><br>" +
-            "<a href='./contactus.html' target='_blank'>Ask for help!</a><br><br>" +
-            "<div>" + donation() + "</div>";
-          console.log(contentInfo);
-
-
-          function donation() {
-            if (donate.checked) {
-              return '<input type="button" id="donateButton" class="btn btn-info btn-block" value="Donate" data-toggle="modal" data-target="#donateModalID">';
-            } else if (donateNo.checked) {
-              return '<p class="badge badge-danger">Donations are closed for this event</p>';
-            }
-          }
-          console.log(markers);
-          addMarker(markers[markers.length - 1], contentInfo); //adds the new marker to the map
-        }
-      }
-    }
-
-
-    //  Donate Radio Modal VIEW script
-    var radiosField = document.getElementById("rField");
-    var myRadioNo = document.getElementById("radioNo");
-    var donation = document.getElementById("donationID");
-
-    radiosField.onclick = function () {
-      if (myRadioNo.checked) {
-        donation.style.display = "none";
-      } else {
-        donation.style.display = "block";
-      }
-    }
-  </script>
 
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
@@ -391,6 +368,10 @@
   <script src="js/scripts.js"></script>
   <!-- endbuild -->
 
+  <!-- MAP EMBED -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyKBM2dqKGmOVKbm30ZpvNamBQbDdWAZk&callback=initMap">
+    </script>
 </body>
 
 </html>
