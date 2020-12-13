@@ -605,6 +605,7 @@ hr:before {
 /* Our team */
 .footer {
   color: white;
+  margin-top: 5em;
 }
 
 /* The Overlay (background) */

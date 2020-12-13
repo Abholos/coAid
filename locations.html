@@ -53,21 +53,12 @@
               Contact - FAQ</a>
           </li>
         </ul>
-        <!-- Sign Up button-->
-        <span class="navbar-text">
-          <a role="button" class="btn btn-secondary btn-sm mr-1" data-toggle="modal" data-target="#signupModal">
-            <span class="fa -plus"></span> Sign Up
-          </a>
-        </span>
-        <!-- Sign in button-->
-        <span class="navbar-text">
-          <a role="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#loginModal">
-            <span class="fa fa-sign-in"></span> Sign In
-          </a>
-        </span>
+        
       </div>
     </div>
   </nav><br><br><br><br>
+
+   
 
   <!--breadcrumb start-->
   <ol class="breadcrumb">
@@ -125,21 +116,21 @@
           <!-- FIELDS TO GEOCODE START-->
           <div class="form-group row required">
             <i class=" prefix grey-text"></i>
-            <input type="text" id="eventAddress" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="eventName">Full address and city, <em>eg: (Karaiskaki 17, Athina 105 54)</em></label>
+            <input type="text" id="eventAddress" class="form-control validate required" minlength="3" required>
+            <label data-error="wrong" data-success="right" for="eventName">Full address and city, <em>eg: (Karaiskaki 17, Athina 105 54)</em></label><span id="eventAddressModInfo" style="color: red"></span>
           </div>
           <!-- FIELDS TO GEOCODE END-->
 
           <div class="form-group row required">
             <i class=" prefix grey-text"></i>
-            <input type="date" id="eventDate" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="eventDate">Date</label>
+            <input type="date" id="eventDate" class="form-control validate required" required>
+            <label data-error="wrong" data-success="right" for="eventDate">Date</label><span id="eventDateModInfo" style="color: red"></span>
           </div>
 
           <div class="form-group row required">
             <i class=" prefix grey-text"></i>
-            <textarea type="text" id="eventDescription" class="md-textarea form-control" rows="4"></textarea>
-            <label data-error="wrong" data-success="right" for="eventDescription">Event Description</label>
+            <textarea type="text" id="eventDescription" class="md-textarea form-control required" rows="4" minlength="10" required></textarea>
+            <label data-error="wrong" data-success="right" for="eventDescription">Event Description</label><span id="eventDescriptionModInfo" style="color: red"></span>
           </div>
 
           <div style="border: 0.1px solid lightgray; border-radius:1%">

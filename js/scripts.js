@@ -1,3 +1,49 @@
+var emailLogIn = document.getElementById("logEmail");
+emailLogIn.oninput = function () {
+  if (!this.validity.valid) {
+    emailLogIn.style.border = "3px solid red";
+    mailInfo.innerHTML = "<em style='color:red'>Invalid email format</em>";
+  } else {
+    emailLogIn.style.border = "1px solid gray";
+    mailInfo.style.display = "none";
+  }
+}
+
+var passLogIn = document.getElementById("logPassword");
+passLogIn.oninput = function () {
+  if (!this.validity.valid) {
+    passLogIn.style.border = "3px solid red";
+    passInfo.innerHTML = "<em style='color:red'>Password must be over 6 chars</em>";
+  } else {
+    passLogIn.style.border = "1px solid gray";
+    passInfo.style.display = "none";
+  }
+}
+
+var emailSign = document.getElementById("signEmail");
+emailSign.oninput = function () {
+  if (!this.validity.valid) {
+    emailSign.style.border = "3px solid red";
+    signMailInfo.innerHTML = "<em style='color:red'>Invalid email format</em>";
+  } else {
+    emailSign.style.border = "1px solid gray";
+    signMailInfo.style.display = "none";
+  }
+}
+
+var passSign = document.getElementById("signPassword");
+passSign.oninput = function () {
+  if (!this.validity.valid) {
+    passSign.style.border = "3px solid red";
+    signPassInfo.innerHTML = "<em style='color:red'>Password must be over 6 chars</em>";
+  } else {
+    passSign.style.border = "1px solid gray";
+    signPassInfo.style.display = "none";
+  }
+}
+
+
+
 //MAP SCRIPT variables - Vissarion start
 var geocoder;
 var map;
@@ -97,6 +143,7 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
 //Maria END
+
 
 //MAP main - Vissrion start
 function initMap() {
@@ -260,6 +307,8 @@ function geocodeAddress(geocoder, resultsMap) {
 
 function addMarker(coords) {
 
+
+
   //fill the info window from user input (add event modal)
   var eventName = document.getElementById("eventName").value;
   var eventAddress = document.getElementById("eventAddress").value;
@@ -304,13 +353,24 @@ function donation() {
   var radiosField = document.getElementById("rField");
   var myRadioNo = document.getElementById("radioNo");
   var donation = document.getElementById("donationID");
+  var myRadioYes = document.getElementById("radioYes");
+  var accountName = document.getElementById("accountName");
+  var iban = document.getElementById("iban");
+  var addEventBtn = document.getElementById("addEventModalID");
 
   radiosField.onclick = function () {
+
+
+    eblDblAddEventBtn(iban);
+
     if (myRadioNo.checked) {
       donation.style.display = "none";
+      document.getElementById("addEventModalID").disabled = false;
     } else {
+      document.getElementById("addEventModalID").disabled = true;
       donation.style.display = "block";
     }
+
   }
 
   var donate = document.getElementById("radioYes");
@@ -320,27 +380,129 @@ function donation() {
   } else if (donateNo.checked) {
     return '<p class="badge badge-danger">Donations are closed for this event</p>';
   }
+} function eblDblAddEventBtn(element) {
+  element.oninput = function () {
+    if (!this.validity.valid) {
+      //addEventBtn.style.backgroundColor = "red";
+      document.getElementById("addEventModalID").disabled = true;
+    } else {
+      //addEventBtn.style.backgroundColor = "green";
+      document.getElementById("addEventModalID").disabled = false;
+    }
+  }
+}
+
+function eblDblAddEventBtn(element) {
+  element.oninput = function () {
+    if (!this.validity.valid) {
+      //addEventBtn.style.backgroundColor = "red";
+      document.getElementById("addEventModalID").disabled = true;
+    } else {
+      //addEventBtn.style.backgroundColor = "green";
+      document.getElementById("addEventModalID").disabled = false;
+    }
+  }
 }
 //MAP main - Vissarion end
 
+
+
 // FORM VALIDATION
 var eventNameMod = document.getElementById("eventName");
-
 eventNameMod.oninput = function () {
   if (!this.validity.valid) {
-    eventNameMod.style.backgroundImage = "url(./images/invalid.png)";
+    eventNameMod.style.backgroundImage = "url(./images/exclamation.ico)";
     eventNameMod.style.backgroundRepeat = "no-repeat";
     eventNameMod.style.backgroundPosition = "right center";
     eventNameMod.style.border = "3px solid red";
     eventNameModInfo.innerHTML = "<em>Please use at least 4 characters</em>";
+    document.getElementById("addEventModalID").disabled = true;
   } else {
-    eventNameMod.style.backgroundImage = "url(./images/valid.png)";
+    eventNameMod.style.backgroundImage = "url(./images/tick.ico)";
     eventNameMod.style.backgroundRepeat = "no-repeat";
     eventNameMod.style.backgroundPosition = "right center";
     eventNameMod.style.border = "none";
     eventNameModInfo.style.display = "none";
+    document.getElementById("addEventModalID").disabled = false;
   }
 }
+
+var eventAddressMod = document.getElementById("eventAddress");
+eventAddressMod.oninput = function () {
+  if (!this.validity.valid) {
+    eventNameMod.style.backgroundImage = "url(./images/exclamation.ico)";
+    eventAddressMod.style.backgroundRepeat = "no-repeat";
+    eventAddressMod.style.backgroundPosition = "right center";
+    eventAddressMod.style.border = "3px solid red";
+    eventAddressModInfo.innerHTML = "<em>Please use at least 3 characters</em>";
+    document.getElementById("addEventModalID").disabled = true;
+  } else {
+    eventNameMod.style.backgroundImage = "url(./images/tick.ico)";
+    eventAddressMod.style.backgroundRepeat = "no-repeat";
+    eventAddressMod.style.backgroundPosition = "right center";
+    eventAddressMod.style.border = "none";
+    eventAddressModInfo.style.display = "none";
+    document.getElementById("addEventModalID").disabled = false;
+  }
+}
+
+var eventDescriptionMod = document.getElementById("eventDescription");
+eventDescriptionMod.oninput = function () {
+  if (!this.validity.valid) {
+    eventDescriptionMod.style.backgroundImage = "url(./images/exclamation.ico)";
+    eventDescriptionMod.style.backgroundRepeat = "no-repeat";
+    eventDescriptionMod.style.backgroundPosition = "right top";
+    eventDescriptionMod.style.border = "3px solid red";
+    eventDescriptionModInfo.innerHTML = "<em>Please use at least 10 characters</em>";
+    document.getElementById("addEventModalID").disabled = true;
+  } else {
+    eventDescriptionMod.style.backgroundImage = "url(./images/tick.ico)";
+    eventDescriptionMod.style.backgroundRepeat = "no-repeat";
+    eventDescriptionMod.style.backgroundPosition = "right top";
+    eventDescriptionMod.style.border = "none";
+    eventDescriptionModInfo.style.display = "none";
+    document.getElementById("addEventModalID").disabled = false;
+  }
+}
+
+
+var eventDateMod = document.getElementById("eventDate");
+//getTime() / 1000 + 900 + 330*60
+eventDateMod.oninput = function () {
+  var eventDateModConv = new Date(document.getElementById("eventDate").value)
+  var epochDatePicked = parseInt(eventDateModConv.getTime());
+  var epochNow = Date.now();
+  //console.log(epochNow);
+  //console.log(epochDatePicked);
+  if (epochNow > epochDatePicked) {
+    eventDateMod.style.backgroundImage = "url(./images/exclamation.ico)";
+    eventDateMod.style.backgroundRepeat = "no-repeat";
+    eventDateMod.style.backgroundPosition = "right center";
+    eventDateMod.style.border = "3px solid red";
+    eventDateModInfo.innerHTML = "<em>Please submit an event at least 1 day after today</em>"
+    document.getElementById("addEventModalID").disabled = true;
+  } else {
+    eventDateMod.style.backgroundImage = "url(./images/tick.ico)";
+    eventDateMod.style.backgroundRepeat = "no-repeat";
+    eventDateMod.style.backgroundPosition = "right center";
+    eventDateMod.style.border = "1px solid lightgray";
+    eventDateModInfo.style.display = "none";
+    document.getElementById("addEventModalID").disabled = false;
+  }
+}
+
+
+
+// var loginPass = document.getElementById("logPassword");
+
+
+
+// var signUpEmail = document.getElementById("signEmail");
+// var signUpPass = document.getElementById("signPassword");
+
+
+
+
 
 
 
