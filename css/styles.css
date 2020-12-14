@@ -701,6 +701,7 @@ hr:before {
 
 .box-text {
   color: white;
+  margin-top: 5em;
 }
 
 /* FORM VALIDATION */
