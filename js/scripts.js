@@ -378,7 +378,7 @@ eventNameMod.oninput = function () {
     eventNameMod.style.backgroundImage = "url(./images/tick.ico)";
     eventNameMod.style.backgroundRepeat = "no-repeat";
     eventNameMod.style.backgroundPosition = "right center";
-    eventNameMod.style.border = "none";
+    eventNameMod.style.border = "1px solid lightgray";
     eventNameModInfo.style.display = "none";
     document.getElementById("addEventModalID").disabled = false;
   }
@@ -397,7 +397,7 @@ eventAddressMod.oninput = function () {
     eventAddressMod.style.backgroundImage = "url(./images/tick.ico)";
     eventAddressMod.style.backgroundRepeat = "no-repeat";
     eventAddressMod.style.backgroundPosition = "right center";
-    eventAddressMod.style.border = "none";
+    eventAddressMod.style.border = "1px solid lightgray";
     eventAddressModInfo.style.display = "none";
     document.getElementById("addEventModalID").disabled = false;
   }
@@ -416,7 +416,7 @@ eventDescriptionMod.oninput = function () {
     eventDescriptionMod.style.backgroundImage = "url(./images/tick.ico)";
     eventDescriptionMod.style.backgroundRepeat = "no-repeat";
     eventDescriptionMod.style.backgroundPosition = "right top";
-    eventDescriptionMod.style.border = "none";
+    eventDescriptionMod.style.border = "1px solid lightgray";
     eventDescriptionModInfo.style.display = "none";
     document.getElementById("addEventModalID").disabled = false;
   }
