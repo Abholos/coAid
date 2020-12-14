@@ -387,14 +387,14 @@ eventNameMod.oninput = function () {
 var eventAddressMod = document.getElementById("eventAddress");
 eventAddressMod.oninput = function () {
   if (!this.validity.valid) {
-    eventNameMod.style.backgroundImage = "url(./images/exclamation.ico)";
+    eventAddressMod.style.backgroundImage = "url(./images/exclamation.ico)";
     eventAddressMod.style.backgroundRepeat = "no-repeat";
     eventAddressMod.style.backgroundPosition = "right center";
     eventAddressMod.style.border = "3px solid red";
     eventAddressModInfo.innerHTML = "<em>Please use at least 3 characters</em>";
     document.getElementById("addEventModalID").disabled = true;
   } else {
-    eventNameMod.style.backgroundImage = "url(./images/tick.ico)";
+    eventAddressMod.style.backgroundImage = "url(./images/tick.ico)";
     eventAddressMod.style.backgroundRepeat = "no-repeat";
     eventAddressMod.style.backgroundPosition = "right center";
     eventAddressMod.style.border = "none";
