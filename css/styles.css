@@ -515,7 +515,7 @@ hr:before {
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
 .card-text {
-  height: 150px;
+  height: 180px;
 }
 
 .card::before,
